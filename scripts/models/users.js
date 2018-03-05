@@ -1,7 +1,7 @@
 'use strict';
 
 var app = app || {};
-var __API_URL__ = 'http://localhost:3000'; 
+var __API_URL__ = 'http://localhost:3000';
 
 (function(module) {
   function errorCallback(err) {
@@ -9,14 +9,36 @@ var __API_URL__ = 'http://localhost:3000';
     module.errorView.initErrorPage(err);
   }
 
-  function User(rawBookObj) {
-    Object.keys(rawBookObj).forEach(key => this[key] = rawBookObj[key]);
+  function User(data) {
+    this.username = data.username;
+    this.firstname = data.firstname;
+    this.lastname = data.lastname;
+    this.email = data.email;
+    this.password = data.password;
   }
 
-  Book.prototype.toHtml = function() {
-    // let template = Handlebars.compile($('#book-list-template').text());
-    return template(this);
-  }
+  User.create = user =>
+    $.post(`${__API_URL__}/api/v1/users`, user)
+      .then(() => page('/'))
+      .catch(errorCallback);
 
-  User.all = [];
+  // User.update = (user, user_id) =>
+  //   $.ajax({
+  //     url: `${__API_URL__}/api/v1/users/${user_id}`,
+  //     method: 'PUT',
+  //     data: user,
+  //   })
+  //     .then(() => page(`/users/${user_id}`))
+  //     .catch(errorCallback)
+
+  // User.destroy = user_id =>
+  //   $.ajax({
+  //     url: `${__API_URL__}/api/v1/users/${user_id}`,
+  //     method: 'DELETE',
+  //   })
+  //     .then(() => page('/'))
+  //     .catch(errorCallback)
+
+  module.User = User;
+})(app)
 

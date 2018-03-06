@@ -6,9 +6,10 @@ var app = app || {};
 
   const aboutUsView = {};
 
-  aboutUsView.initAboutUsView = function () {
-    $('.container').hide();
-    $('.nav-menu').slideUp(350);
-    $('.about-us').show();
-  }
-})
+  // aboutUsView.initAboutUsView = function () {
+  //   $('.container').hide();
+  //   $('.nav-menu').slideUp(350);
+  //   $('.about-us').show();
+  // }
+  module.aboutUsview = aboutUsView;
+})(app);

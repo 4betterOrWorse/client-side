@@ -1,94 +1,168 @@
 * {
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 body{
-    font-family: sans-serif; 
-    font-size:16px;
-    background-color: #fff;
+  font-family: sans-serif; 
+  font-size:16px;
+  background-color: #fff;
 }
 
 main{
-    width:480px;
-    margin:0 auto;
-    padding:20px;
-    background-color: #add8e6;
-    position: relative;
+  width:480px;
+  margin:0 auto;
+  padding:0px;
+  background-color: #add8e6;
+  position: relative;
 }
 
-main h1{
-    display: inline-block
+span a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  margin-left: 10px;
 }
 
-nav .icon-menu {
-    font-size: 32px;
-    float: right;
-    margin: 5px 20px 0 0;
+/* dropdown menu */
+nav {
+	width:100%;
+	background:#648c99;
+	height:60px; 
+	line-height:60px;
+	border-bottom:1px solid #dddddd;
 }
-nav ul {
-    display: none;
-    clear: both;
-    padding: 0 0 30px 0;
-    list-style-type: none;
+.hamburger{
+  background:none;
+  position:absolute;
+  top:4;
+  right:0;
+  line-height:42px;
+  padding:5px 30px 0px 15px;
+  color:white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:4;
+  right:0;
+  line-height:42px;
+  padding:5px 30px 0px 15px;
+  color:white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
 }
 
-nav .icon-menu:hover + ul,
-nav ul:hover {
-    display: block;
+.menu{
+  z-index:10; 
+  font-weight:bold; 
+  font-size:0.8em; 
+  width:100%; 
+  background:#f1f1f1;  
+  position:absolute; 
+  text-align:center; 
+  font-size:12px;
 }
 
-nav ul li {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #fff;
+.menu ul {
+  margin: 0; 
+  padding: 0; 
+}
+.menu li {
+  display: block;
+  padding:15px 0 15px 0;
+  border-bottom:#dddddd 1px solid;
 }
 
-nav ul li a {
-    color: #333;
-    text-decoration: none;
+.menu li:hover {
+  display: block;
+  background:#ffffff;
+  padding:15px 0 15px 0;
+  border-bottom:#dddddd 1px solid;
+}
+.menu ul li a {
+  text-decoration:none;
+  margin: 0px;
+  color:#666;
+}
+.menu ul li a:hover {
+  color: #666;
+  text-decoration:none;
+}
+.menu a{
+  text-decoration:none; 
+  color:#666;}
+
+.menu a:hover{
+  text-decoration:none;
+  color:#666;
 }
 
-.h1-nav{
-    display:block; 
-    float:left;
-}
+nav{display:inline-block; font-size:12px;}
+span{padding-left:20px;}
+a{color:#336699;}
+/* drop down end */
 
 .clear{
-    clear:both;
+  clear:both;
 }
 
 .error-view{
-    display:none;
+  display:none;
 }
 
 .admin-view{
-    display:none;
+  display:none;
+}
+
+.my-reviews-view{
+  display:none;
+}
+
+.create-user-form-view h3 {
+  color: white;
+  margin-left: 30px;
 }
 
 input{
-
-    border-radius:5px;
-    border-style:none;
-    width:90%;
-    padding:20px;
-    height:25px;
-    margin:10px 5%;
-    color:#333;
+  border-radius:5px;
+  border-style:none;
+  width:90%;
+  padding:20px;
+  height:25px;
+  margin:10px 5%;
+  color:#333;
 }
 
 .container{
-    width:100%;
+  width:100%;
 }
 
-button {
-    height:40px;
-    border-radius: 4px;
-    background-color:#648c99;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    width:90%;
-    margin:10px 5%;
+.button {
+  height:40px;
+  border-radius: 4px;
+  background-color:#648c99;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width:90%;
+  margin:10px 5% 20px;
+
+.img-wrapper{
+    float:left;
+}
+
+.restaurant-overlay{
+    float:left;
 }

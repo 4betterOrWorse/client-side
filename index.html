@@ -9,18 +9,18 @@
 
 
 , , 
-     <script type="text/x-handlebars-template" id="restaurant-list-template">
-        <li class="restaurant-items" data-bookid={{book_id}}>
+     <script type="text/x-handlebars-template" id="home-list-template">
+       
           <div class="restaurant-container">
             
-            <div class="book-overlay">
+            <div class="restaurant-overlay">
               <h3>{{inspection_business_name}}</h3>
               <p>{{inspection_result}}</p>
               <p>{{inspection_score}}</p>
               <p class="detail-button"><a href="">view details</a></p>
             </div>
           </div>
-        </li>
+       
       </script>
 
 
@@ -39,7 +39,7 @@
         </nav>
         <div class="clear"></div>
         <section class="home-view container">
-                <div id="home-detail" ></div>
+                <div id="home-list" ></div>
         </section>
 
         <section class="detail-view container">
@@ -89,6 +89,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="scripts/models/kc.js"></script>
     <script src="scripts/models/users.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/views/user-view.js"></script>

@@ -2,15 +2,16 @@
   box-sizing:border-box;
 }
 
-body{
+body {
   font-family: sans-serif; 
   font-size:16px;
   background-color: #fff;
 }
 
-main{
-  width:480px;
+main {
+  width: 360px;
   margin:0 auto;
+  height: 100%;
   padding:0px;
   background-color: #add8e6;
   position: relative;
@@ -31,22 +32,8 @@ nav {
 	line-height:60px;
 	border-bottom:1px solid #dddddd;
 }
-.hamburger{
-  background:none;
-  position:absolute;
-  top:4;
-  right:0;
-  line-height:42px;
-  padding:5px 30px 0px 15px;
-  color:white;
-  border:0;
-  font-size:2em;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10;
-}
-.cross{
+
+.hamburger {
   background:none;
   position:absolute;
   top:4;
@@ -62,7 +49,23 @@ nav {
   z-index:10;
 }
 
-.menu{
+.cross {
+  background:none;
+  position:absolute;
+  top:4;
+  right:0;
+  line-height:42px;
+  padding:5px 30px 0px 15px;
+  color:white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
+}
+
+.menu {
   z-index:10; 
   font-weight:bold; 
   font-size:0.8em; 
@@ -77,6 +80,7 @@ nav {
   margin: 0; 
   padding: 0; 
 }
+
 .menu li {
   display: block;
   padding:15px 0 15px 0;
@@ -89,80 +93,105 @@ nav {
   padding:15px 0 15px 0;
   border-bottom:#dddddd 1px solid;
 }
+
 .menu ul li a {
   text-decoration:none;
   margin: 0px;
   color:#666;
 }
+
 .menu ul li a:hover {
   color: #666;
   text-decoration:none;
 }
-.menu a{
+
+.menu a {
   text-decoration:none; 
   color:#666;}
 
-.menu a:hover{
+.menu a:hover {
   text-decoration:none;
   color:#666;
 }
 
-nav{display:inline-block; font-size:12px;}
-span{padding-left:20px;}
-a{color:#336699;}
+nav {
+  display:inline-block;
+  font-size:12px;
+}
+
+span {
+  padding-left:20px;
+}
+
+a {
+  color:#336699;
+}
 /* drop down end */
 
-.clear{
+.clear {
   clear:both;
 }
 
-.error-view{
+.error-view {
   display:none;
 }
 
-.admin-view{
+.admin-view {
   display:none;
 }
 
-.my-reviews-view{
+.my-reviews-view {
   display:none;
 }
 
-.create-user-form-view h3 {
+.create-user-form-view {
+  display:none;
+}
+
+.create-user-form-view p {
   color: white;
+  font-size: 18px;
   margin-left: 30px;
+  margin-bottom: 0px;
 }
 
-input{
-  border-radius:5px;
-  border-style:none;
-  width:90%;
-  padding:20px;
-  height:25px;
-  margin:10px 5%;
-  color:#333;
+input {
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  color: #333;
 }
 
-.container{
-  width:100%;
+.container {
+  width: 100%;
 }
 
 .button {
-  height:40px;
+  height: 40px;
   border-radius: 4px;
-  background-color:#648c99;
+  background-color: #648c99;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  width:90%;
-  margin:10px 5% 20px;
+  width: 90%;
+  margin: 16px 5% 20px;
+} 
 
-.img-wrapper{
-    float:left;
+.img-wrapper {
+    float: left;
 }
 
-.restaurant-overlay{
-    float:left;
+.restaurant-overlay {
+    float: left;
+}
+
+footer {
+  width: 100%;
+  height:60px;
+  background-color: #648c99;
 }

@@ -30,9 +30,11 @@ $(document).ready(function() {
     $('.menu').slideUp(350);
   }
 
-  restaurantsView.initDetailView = function (ctx) {
+  restaurantsView.initView = function (ctx) {
     reset();
-    $('.detail-view').show();
+    $('.home-view').show();
+    $('#home-detail').empty();
+    module.KC.filter.map(rest => $('#home-detail').append(rest.toHtml()));
   }
 
   // restaurantsView.initUpdateReview = function (ctx) {

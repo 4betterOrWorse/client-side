@@ -47,8 +47,9 @@
         <section class="admin-view container">
             <h2 id="admin-view-title">Enter Your Passphrase</h2>
                 <form id="admin-form">
-                    <input type="number" name="passphrase">
-                    <button type="submit">Sign In</button>
+                    <input type="text" name="username" placeholder="enter username" required>
+                    <input type="number" name="password" placeholder="enter password" required>
+                    <button class="button" type="submit">Sign In</button>
                 </form>
          </section>
          <section class="create-user-form-view container">
@@ -58,7 +59,7 @@
               <input type="text" name="lastName" placeholder="Last Name" required>
               <input type="text" name="username" placeholder="Username" required>
               <input type="text" name="email" placeholder="Email" required>
-              <input type="text" name="password" placeholder="Create Password" required>
+              <input type="password" name="password" placeholder="Create Password" required>
               <button type="submit">sign in</button>
             </form>
           </section>

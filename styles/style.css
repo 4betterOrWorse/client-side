@@ -5,7 +5,7 @@
 body{
     font-family: sans-serif; 
     font-size:16px;
-    background-color: #efefef;
+    background-color: #fff;
 
 }
 
@@ -13,7 +13,7 @@ main{
     width:480px;
     margin:0 auto;
     padding:20px;
-    background-color: antiquewhite;
+    background-color: #add8e6;
     position: relative;
 }
 
@@ -37,11 +37,11 @@ nav .icon-menu {
   nav ul li {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #444;
+    background-color: #fff;
   }
 
   nav ul li a {
-    color: #ccc;
+    color: #333;
     text-decoration: none;
    }
 
@@ -54,5 +54,48 @@ nav .icon-menu {
        clear:both;
    }
 
+   .error-view{
+       display:none;
+   }
+
+   .admin-view{
+       display:none;
+   }
+
+
+   input{
+    
+       border-radius:5px;
+       border-style:none;
+       width:90%;
+       padding:20px;
+       height:25px;
+       margin:10px 5%;
+       color:#333;
+   }
+
+   /* input:nth-child(5){
+        margin-bottom:20px;
+   } */
+
+   .container{
+       width:100%;
+   }
+
+   button {
+       
+    height:40px;
+    border-radius: 4px;
+    background-color:#648c99;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width:90%;
+    margin:10px 5%;
+  }
+  
+  
 
 

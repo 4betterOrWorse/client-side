@@ -6,7 +6,6 @@ body{
     font-family: sans-serif; 
     font-size:16px;
     background-color: #fff;
-
 }
 
 main{
@@ -17,73 +16,71 @@ main{
     position: relative;
 }
 
-main h1{display: inline-block}
+main h1{
+    display: inline-block
+}
 
 nav .icon-menu {
     font-size: 32px;
     float: right;
     margin: 5px 20px 0 0;
-  }
-  nav ul {
+}
+nav ul {
     display: none;
     clear: both;
     padding: 0 0 30px 0;
     list-style-type: none;
-  }
-  nav .icon-menu:hover + ul,
-  nav ul:hover {
+}
+
+nav .icon-menu:hover + ul,
+nav ul:hover {
     display: block;
-  }
-  nav ul li {
+}
+
+nav ul li {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #fff;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     color: #333;
     text-decoration: none;
-   }
+}
 
-   .h1-nav{
+.h1-nav{
     display:block; 
     float:left;
-   }
+}
 
-   .clear{
-       clear:both;
-   }
+.clear{
+    clear:both;
+}
 
-   .error-view{
-       display:none;
-   }
+.error-view{
+    display:none;
+}
 
-   .admin-view{
-       display:none;
-   }
+.admin-view{
+    display:none;
+}
 
+input{
 
-   input{
-    
-       border-radius:5px;
-       border-style:none;
-       width:90%;
-       padding:20px;
-       height:25px;
-       margin:10px 5%;
-       color:#333;
-   }
+    border-radius:5px;
+    border-style:none;
+    width:90%;
+    padding:20px;
+    height:25px;
+    margin:10px 5%;
+    color:#333;
+}
 
-   /* input:nth-child(5){
-        margin-bottom:20px;
-   } */
+.container{
+    width:100%;
+}
 
-   .container{
-       width:100%;
-   }
-
-   button {
-       
+button {
     height:40px;
     border-radius: 4px;
     background-color:#648c99;
@@ -94,8 +91,4 @@ nav .icon-menu {
     cursor: pointer;
     width:90%;
     margin:10px 5%;
-  }
-  
-  
-
-
+}

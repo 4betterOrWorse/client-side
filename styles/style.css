@@ -158,4 +158,11 @@ input{
   cursor: pointer;
   width:90%;
   margin:10px 5% 20px;
+
+.img-wrapper{
+    float:left;
+}
+
+.restaurant-overlay{
+    float:left;
 }

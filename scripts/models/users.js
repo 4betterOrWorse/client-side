@@ -17,11 +17,12 @@ var __API_URL__ = 'http://localhost:3000';
     this.password = data.password;
   }
 
-  User.create = user =>
+  User.create = user => {
+    console.log(user);
     $.post(`${__API_URL__}/api/v1/users`, user)
       .then(() => page('/'))
       .catch(errorCallback);
-
+  }
   // User.update = (user, user_id) =>
   //   $.ajax({
   //     url: `${__API_URL__}/api/v1/users/${user_id}`,

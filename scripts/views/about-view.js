@@ -11,4 +11,5 @@ var app = app || {};
     $('.nav-menu').slideUp(350);
     $('.about-us').show();
   }
-})
+  module.aboutUsview = aboutUsView;
+})(app);

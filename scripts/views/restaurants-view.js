@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-(function (module) {
+(function (module){
 
   const restaurantsView = {};
 
@@ -18,5 +18,8 @@ var app = app || {};
 
   // restaurantsView.initUpdateReview = function (ctx) {
   //   reset();
-  }
+  // }
+
+  module.restaurantsView = restaurantsView;
+
 })(app);

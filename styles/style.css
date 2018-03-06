@@ -92,3 +92,11 @@ button {
     width:90%;
     margin:10px 5%;
 }
+
+.img-wrapper{
+    float:left;
+}
+
+.restaurant-overlay{
+    float:left;
+}

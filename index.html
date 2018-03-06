@@ -4,11 +4,17 @@
   <head>
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/modules.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/392b4de92b/UntitledProject/style.css">
+
      <link rel="stylesheet" href="styles/style.css" />
 
      <script type="text/x-handlebars-template" id="home-list-template">
-          <div class="restaurant-container">
+          <div class="home-view-container">
+            <section class="img-wrapper"><img src="images/sad.png"></section>
             <div class="restaurant-overlay">
               <h3>{{inspection_business_name}}</h3>
               <p>{{inspection_result}}</p>
@@ -16,7 +22,18 @@
               <p class="detail-button"><a href="">view details</a></p>
             </div>
           </div>
-      </script>
+    </script>
+
+    <script type="text/x-handlebars-template" id="restaurant-detail-template">
+        <div class="detail-view-container">
+          <section class="img-wrapper"><img src="images/sad.png"></section>
+          <div class="restaurant-overlay">
+            <h3>{{inspection_business_name}}</h3>
+            <p>{{inspection_result}}</p>
+            <p>{{inspection_score}}</p>
+          </div>
+        </div>
+  </script>
 
 
   </head>
@@ -84,10 +101,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="scripts/models/users.js"></script>
-    <script src="scripts/models/kc.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
+    <script src="scripts/views/admin-view.js"></script>
+    <script src="scripts/views/error-view.js"></script>
+    <script src="scripts/views/user-reviews-view.js"></script>
     <script src="scripts/views/user-view.js"></script>
     <script src="scripts/views/routes.js"></script>
+    <script src="scripts/models/users.js"></script>
+    <script src="scripts/models/kc.js"></script>
   </body>
 </html>

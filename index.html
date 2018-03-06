@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/392b4de92b/UntitledProject/style.css">
      <link rel="stylesheet" href="styles/style.css" />
+
+
+, , 
+     <script type="text/x-handlebars-template" id="restaurant-list-template">
+        <li class="restaurant-items" data-bookid={{book_id}}>
+          <div class="restaurant-container">
+            
+            <div class="book-overlay">
+              <h3>{{inspection_business_name}}</h3>
+              <p>{{inspection_result}}</p>
+              <p>{{inspection_score}}</p>
+              <p class="detail-button"><a href="">view details</a></p>
+            </div>
+          </div>
+        </li>
+      </script>
+
+
   </head>
   <body>
       <main>

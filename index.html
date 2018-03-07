@@ -16,9 +16,9 @@
             <section class="img-wrapper"><img src="images/sad.png"></section>
             <div class="restaurant-overlay">
               <h3>{{inspection_business_name}}</h3>
-              <p>{{inspection_result}}</p>
-              <p>{{inspection_score}}</p>
-              <p class="detail-button"><a href="">view details</a></p>
+              <p>{{address}}, {{city}} {{zip_code}}</p>
+              <p>Total Violation Points: {{inspection_score}}</p>
+              <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
             </div>
           </div>
     </script>
@@ -27,9 +27,10 @@
         <div class="detail-view-container">
           <section class="img-wrapper"><img src="images/sad.png"></section>
           <div class="restaurant-overlay">
-            <h3>{{inspection_business_name}}</h3>
-            <p>{{inspection_result}}</p>
-            <p>{{inspection_score}}</p>
+            <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
+            <p class="{{violation_record_id}}">{{inspection_result}}</p>
+            <p class="{{violation_record_id}}">{{inspection_score}}</p>
+            <p>{{violation_description}}</p>
           </div>
         </div>
   </script>
@@ -43,7 +44,7 @@
         </nav>
           <div class="menu">
             <ul>
-                <a href=""><li>Home</li></a>
+                <a href="/"><li>Home</li></a>
                 <a href=""><li>My Reviews</li></a>
                 <a href=""><li>About</li></a>
                 <a href=""><li>Login</li></a>
@@ -104,7 +105,7 @@
     <script src="scripts/models/users.js"></script>
     <script src="scripts/models/kc.js"></script>
     <script src="scripts/views/error-view.js"></script>
-    <script src="scripts/views/admin-view.js"></script> 
+    <!-- <script src="scripts/views/admin-view.js"></script>  -->
     <script src="scripts/views/user-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/views/user-reviews-view.js"></script>

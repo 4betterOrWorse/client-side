@@ -33,9 +33,24 @@ $(document).ready(function() {
   restaurantsView.initView = function (ctx) {
     reset();
     $('.home-view').show();
-    $('#home-detail').empty();
-    module.KC.filter.map(rest => $('#home-detail').append(rest.toHtml()));
+    $('#home-list').empty();
+    module.KC.filter.map(rest => {
+      $('#home-list').append(rest.toHtml())});
   }
+
+  restaurantsView.initDetail = function (ctx) {
+    reset();
+    $('.detail-view').show();
+    $('#restaurant-detail').empty();
+    let counter = 0;
+    module.KC.one.map(rest => {
+      $('#restaurant-detail').append(rest.toHtml1());
+      if(counter !== 0 && rest.inspection_date === module.KC.one[counter-1].inspection_date){
+        $(`.${rest.violation_record_id}`).hide();
+      }
+      counter++;
+    })
+  };
 
   // restaurantsView.initUpdateReview = function (ctx) {
   //   reset();

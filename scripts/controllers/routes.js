@@ -1,7 +1,7 @@
 'use strict';
 
 if(window.location.pathname !== '/') {
-  page.base('/client-side');
+  page.base('/');
 }
 
 page('/', ctx => app.KC.fetchAll(() => app.restaurantsView.initView(ctx)));

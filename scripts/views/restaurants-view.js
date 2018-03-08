@@ -55,9 +55,8 @@ $(document).ready(function() {
     restaurantsView.makeMap();
   };
 
-
-  
-  restaurantsView.makeMap = function(){ 
+  restaurantsView.makeMap = function(){
+    console.log(module.KC.one);
     let chartKC = [];
     chartKC = module.KC.one.filter((a, b, c) => c.findIndex(a2 => a.inspection_date === a2.inspection_date) === b);
     console.log(chartKC);

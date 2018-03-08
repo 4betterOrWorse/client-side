@@ -30,7 +30,6 @@ var app = app || {};
   };
 
   Yelp.loadOne = rows => {
-    console.log(rows);
     Yelp.one = new Yelp(JSON.parse(rows));
   }
 
@@ -48,7 +47,6 @@ var app = app || {};
   }
 
   Yelp.fetchOne = (ctx, callback) => {
-    console.log(ctx);
     $.get(`${__API_URL__}/api/v1/yelp/businesses/${ctx.params.id}`)
       .then(Yelp.loadOne)
       .then(callback)

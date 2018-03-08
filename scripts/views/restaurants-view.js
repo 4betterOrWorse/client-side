@@ -66,17 +66,18 @@ $(document).ready(function() {
       var dateA=new Date(a.inspection_date), dateB=new Date(b.inspection_date)
       return dateA-dateB //sort by date ascending
     });
+
+    
     let restDates = [];
     let restScore = [];
     let restName = chartKC.inspection_business_name;
     chartKC.forEach(function(element) {
       restName = element.inspection_business_name;
-      restDates.push(element.inspection_date);
+      console.log(new Date(element.inspection_date).toDateString('en-US'));
+      restDates.push(new Date(element.inspection_date).toDateString('en-US'));
       restScore.push(element.inspection_score);
     });
-    // console.log(restDates);
-    //  console.log(module.KC.one.inspection_business_name);
-    //var ctx = document.getElementById('myChart').getContext('2d');
+
     let ctxMap = document.getElementById('myChart');
     let chart = new Chart(ctxMap, {
       // The type of chart we want to create

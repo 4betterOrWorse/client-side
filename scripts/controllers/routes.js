@@ -1,8 +1,6 @@
 'use strict';
 
-if(window.location.pathname !== '/') {
-  page.base('/client-side');
-}
+page.base('/client-side');
 
 page('/', ctx => {
   console.log('here');

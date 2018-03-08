@@ -16,7 +16,8 @@ var app = app || {};
   }
 
   KC.prototype.toHtml1 = function() {
-    let template = Handlebars.compile($('#restaurant-detail-template').text());
+    let template = Handlebars.compile(
+      $('#restaurant-detail-template').text());
     return template(this);
   }
 

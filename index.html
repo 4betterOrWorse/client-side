@@ -27,22 +27,27 @@
     <script type="text/x-handlebars-template" id="yelp-list-template">
           <div class="yelp-view-container">
             <section class="yelpImg"><img src="{{image_url}}"></section>
-              <h3>{{name}}</h3>
-              <p>{{rating}}</p>
+            <section class="yelpInfo"><h3>{{name}}</h3>
+              <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
+              <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
               <p>{{location.display_address}}</p>
-            <button class="detail-button"><a href="/{{id}}">view details</a></button>
+            <button class="detail-button"><a href="/{{id}}">view details</a></button></section> 
          </div>
    </script>
 
    <script type="text/x-handlebars-template" id="yelp-detail-template">
     <div class="yelp-detail-view-container">
       <section class="yelpImg"><img src="{{image_url}}"></section>
+      <section class="yelpInfo">
         <h3>{{name}}</h3>
-        <p>{{rating}}</p>
+         <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
+         <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
+         
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
-        <p>{{url}}</p>
+        <p><a href="{{url}}" target=_blank">{{name}}</a></p>
       <button class="detail-button"><a href="/{{address1}}">health record</a></button>
+    </section>
     </div>
 </script>
 

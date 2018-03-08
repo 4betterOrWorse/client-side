@@ -99,11 +99,6 @@ $(document).ready(function() {
     });
   };
 
-
-  // restaurantsView.initUpdateReview = function (ctx) {
-  //   reset();
-  // }
-
   module.restaurantsView = restaurantsView;
 
 })(app);

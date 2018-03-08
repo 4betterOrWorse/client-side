@@ -70,13 +70,5 @@ var __API_URL__ = 'http://localhost:3000';
     page('/reviews');
   };
 
-  // Review.destroy = review_id =>
-  //   $.ajax({
-  //     url: `${__API_URL__}/api/v1/reviews/${review_id}`,
-  //     method: 'DELETE',
-  //   })
-  //     .then(() => page('/'))
-  //     .catch(errorCallback)
-
   module.Review = Review;
 })(app)

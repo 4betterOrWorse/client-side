@@ -9,5 +9,11 @@ page('/business/:id', ctx => {
 page('/reviews', ctx => app.Review.fetchAll(() => app.reviewView.initReview(ctx)));
 
 page('/reviews/create', ctx => app.Review.create(ctx));
-page('/reviews/update/:review_id', (ctx, next) => app.Review.fetchOne(ctx, next), ctx => app.reviewView.initUpdateReview(ctx));
+
+page('/reviews/update/:review_id', ctx => app.Review.fetchOne(ctx, app.reviewView.initUpdateReview));
+
+page('/reviews/:review_id', ctx => app.Review.fetchOne(() => app.reviewView.initSingleReivew(ctx)));
+
 page();
+
+// 

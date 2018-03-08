@@ -43,19 +43,26 @@ var app = app || {};
   }
 
   reviewView.initUpdateReview = (ctx) => {
+    console.log(ctx);
     reset();
-    $('.update').show();
-    $('').empty();
+    $('.update-review').show();
+    $('#single-review-update').empty();
+
+    let template = Handlebars.compile($('#update-review-template').text());
+    $('#single-review-update').append(template(ctx));
 
     $('#update-btn').on('click', function(event){
+      console.log('update button got hit');
       event.preventDefault();
       let review = {
         review_id: ctx.review_id,
         username: $('#update-username').val(),
         review: $('#update-review').val() || ctx.review,
-        published_on: $('#update-published_on').val() || ctx.published_on,
+        // published_on: $('#update-published_on').val() || ctx.published_on,
       };
-      module.Review.updateReview(review);
+      console.log('ater review got defined');
+      console.log(review);
+      module.Review.update(review);
 
     });
     $('#cancel-btn').on('click', function(event){
@@ -64,6 +71,14 @@ var app = app || {};
     });
 
   };
+
+  reviewView.initSingleReview = (ctx) => {
+    reset();
+    $('.single-review').show();
+    $('#single-reivew-list').empty();
+
+    $('#single-review-list').append(ctx.toHtml());
+  }
 
   module.reviewView = reviewView;
 

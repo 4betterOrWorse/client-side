@@ -8,7 +8,6 @@ var __API_URL__ = 'http://localhost:3000';
     module.errorView.initErrorPage(err);
   }
   function Review(data) {
-    console.log(typeof(data.published_on));
     let time = new Date(data.published_on);
     this.review_id = data.review_id;
     this.username = data.username;
@@ -24,7 +23,6 @@ var __API_URL__ = 'http://localhost:3000';
   Review.all = [];
 
   Review.loadAll = rows => {
-    console.log(rows);
     Review.all = rows.sort((a, b) => (new Date(b.published_on)) - (new Date(a.published_on))).map(review => new Review(review));
   }
 
@@ -34,11 +32,12 @@ var __API_URL__ = 'http://localhost:3000';
       .then(callback)
       .catch(errorCallback);
 
-  Review.fetchOne = (ctx, callback) =>
+  Review.fetchOne = (ctx, callback) => {
     $.get(`${__API_URL__}/api/v1/reviews/${ctx.params.review_id}`)
-      .then(results => new Review(results[0]))
+      .then(results => results[0])
       .then(callback)
       .catch(errorCallback);
+  }
 
   Review.create = review => {
     console.log(review);
@@ -47,14 +46,20 @@ var __API_URL__ = 'http://localhost:3000';
       .catch(errorCallback);
   }
 
-  Review.update = (review, review_id) =>
+  Review.update = (review, review_id) =>{
     $.ajax({
-      url: `${__API_URL__}/api/v1/reviews/${review_id}`,
+      url: `${__API_URL__}/api/v1/reviews/update/${review_id}`,
       method: 'PUT',
       data: review,
     })
-      .then(() => page(`/reviews/${review_id}`))
+      .then(() => page('/reviews'))
       .catch(errorCallback)
+
+  }
+
+  Review.cancel = () => {
+    page('/reviews');
+  };
 
   // Review.destroy = review_id =>
   //   $.ajax({

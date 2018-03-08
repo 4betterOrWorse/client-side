@@ -48,7 +48,7 @@
           </tr>
         </table>
         <p>Date: {{published_on}}</p>
-        <a href=""><button>Update</button></a>
+        <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
         <a href=""><button>Delete</button></a>     
       </div> 
     </script>
@@ -57,11 +57,11 @@
       <form class="update-review-item">
         <section class="update-field">
           <label>
-            <input type="text" id="update-username" placeholder="Enter Your Username">
+            <input type="text" id="update-username" placeholder="Enter Your Username" required>
           </label>
-          <textarea id="update-description" rows="30" cols="30" placeholder="{{description}}"></textarea>
+          <textarea id="update-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
   
-          <p>Are you sure you want to update this book?</p>
+          <p>Are you sure you want to update this review?</p>
           <button id="update-btn">Update</button>
           <button id="cancel-btn">Cancel</button>          
         </section>
@@ -100,14 +100,14 @@
         <section class="user-review container">
           <div id="review-list" ></div>
           <div id="review-submit-form" ></div>
-
         </section>
 
-        <section class="my-reviews-view container">
-          <h3>add a review</h3>
-          <form id="add-review">
-              <!-- <button class="button" type="submit">Sign In</button> -->
-          </form>
+        <section class="update-review container">
+          <div id="single-review-update"></div>
+        </section>
+
+        <section class="single-review container">
+          <div id="single-review-list"></div>
         </section>
 
         <section class="error-view container">

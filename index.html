@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/392b4de92b/UntitledProject/style.css">
     <link rel="stylesheet" href="styles/style.css" />
-    <base href=".">
-
 
      <script type="text/x-handlebars-template" id="home-list-template">
           <div class="home-view-container">
@@ -18,7 +16,7 @@
               <h3>{{inspection_business_name}}</h3>
               <p>{{address}}, {{city}} {{zip_code}}</p>
               <p>Total Violation Points: {{inspection_score}}</p>
-              <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
+              <p class="detail-button"><a href="/client-side/business/{{business_id}}">view details</a></p>
             </div>
           </div>
     </script>
@@ -30,7 +28,7 @@
               <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
               <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
               <p>{{location.display_address}}</p>
-            <button class="detail-button" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
+            <button class="detail-button" id="yelpSubmit"><a href="/client-side/{{id}}">view details</a></button>
          </div>
    </script>
 
@@ -73,8 +71,8 @@
           </tr>
         </table>
         <p>Date: {{published_on}}</p>
-        <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
-        <a href="/reviews/delete/{{review_id}}"><button>Delete</button></a>     
+        <a href="/client-side/reviews/update/{{review_id}}"><button>Update</button></a>
+        <a href="/client-side/reviews/delete/{{review_id}}"><button>Delete</button></a>     
       </div> 
     </script>
 
@@ -111,16 +109,16 @@
   <body>
       <main>
         <nav class="nav-menu">
-            <span><a href="/">Don't Go</a></span>
+            <span><a href="/client-side/">Don't Go</a></span>
             <button class="hamburger">&#9776;</button>
             <button class="cross">&#9776;</button>
         </nav>
           <div class="menu">
             <ul>
-                <a href="/"><li>Home</li></a>
-                <a href="/business"><li>Don't Go List</li></a>
+                <a href="/client-side/"><li>Home</li></a>
+                <a href="/client-side/business"><li>Don't Go List</li></a>
                 <a href=""><li>About</li></a>
-                <a href="/reviews"><li>Reviews</li></a>
+                <a href="/client-side/reviews"><li>Reviews</li></a>
             </ul>
           </div>
         <div class="clear"></div>

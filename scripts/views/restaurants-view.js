@@ -66,7 +66,6 @@ $(document).ready(function() {
       return dateA-dateB //sort by date ascending
     });
 
-    
     let restDates = [];
     let restScore = [];
     let restName = chartKC.inspection_business_name;

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +29,7 @@
               <h3>{{name}}</h3>
               <p>{{rating}}</p>
               <p>{{location.display_address}}</p>
-            <button class="detail-button"><a href="/{{id}}">view details</a></button>
+            <button class="detail-button" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
          </div>
    </script>
 
@@ -42,7 +41,7 @@
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
         <p>{{url}}</p>
-      <button class="detail-button"><a href="/{{address1}}">health record</a></button>
+      <button class="detail-button" id="healthButton" data-id="{{location.address1}}">health record</button>
     </div>
 </script>
 
@@ -140,8 +139,8 @@
         </section>
 
         <section class="detail-view container">
-          <div id="restaurant-detail" ></div>
           <canvas id="myChart" width="480" height="480"></canvas>
+          <div id="restaurant-detail" ></div>
         </section>
 
         <section class="about-view container">
@@ -188,15 +187,12 @@
     <script src="scripts/models/kc.js"></script>
     <script src="scripts/models/yelp.js"></script>
     <script src="scripts/views/error-view.js"></script>
-    <script src="scripts/views/yelp-view.js"></script>
-    <!-- <script src="scripts/views/admin-view.js"></script>  -->
     <script src="scripts/views/user-view.js"></script>
+    <script src="scripts/views/yelp-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/models/reviews.js"></script>
     <script src="scripts/views/review-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
-
-    <!-- <script src="scripts/views/chart.js"></script> -->
   </body>
 </html>
 

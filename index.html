@@ -25,13 +25,14 @@
 
     <script type="text/x-handlebars-template" id="restaurant-detail-template">
         <div class="detail-view-container">
-          <section class="img-wrapper"><img src="images/sad.png"></section>
+          <!-- <section class="img-wrapper"><img src="images/sad.png"></section> -->
           <div class="restaurant-overlay">
             <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
             <p class="{{violation_record_id}}">{{inspection_result}}</p>
             <p class="{{violation_record_id}}">{{inspection_score}}</p>
             <p>{{violation_description}}</p>
           </div>
+          
         </div>
     </script>
   </head>
@@ -56,6 +57,7 @@
         </section>
 
         <section class="detail-view container">
+            <canvas id="myChart" width="480" height="480"></canvas>
             <div id="restaurant-detail" ></div>
         </section>
 
@@ -97,11 +99,13 @@
          <footer class="footer"></footer>
       </main>
       
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src"=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-
     <script src="scripts/models/users.js"></script>
     <script src="scripts/models/kc.js"></script>
     <script src="scripts/views/error-view.js"></script>
@@ -110,5 +114,7 @@
     <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/views/user-reviews-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
+
+    <!-- <script src="scripts/views/chart.js"></script> -->
   </body>
 </html>

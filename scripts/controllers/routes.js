@@ -1,5 +1,9 @@
 'use strict';
 
+if(window.location.pathname !== '/') {
+  page.base('/client-side');
+}
+
 page('/', ctx => {
   console.log('here');
   app.Yelp.fetchAll(app.yelpView.results)

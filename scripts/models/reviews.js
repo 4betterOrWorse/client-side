@@ -8,10 +8,12 @@ var __API_URL__ = 'http://localhost:3000';
     module.errorView.initErrorPage(err);
   }
   function Review(data) {
-    this.review_id = data.review_id
+    console.log(typeof(data.published_on));
+    let time = new Date(data.published_on);
+    this.review_id = data.review_id;
     this.username = data.username;
     this.review = data.review;
-    this.published_on = data.published_on;
+    this.published_on = time.toLocaleString('en-US');
     this.index;
   }
   Review.prototype.toHtml = function() {
@@ -45,14 +47,14 @@ var __API_URL__ = 'http://localhost:3000';
       .catch(errorCallback);
   }
 
-  // Review.update = (review, review_id) =>
-  //   $.ajax({
-  //     url: `${__API_URL__}/api/v1/reviews/${review_id}`,
-  //     method: 'PUT',
-  //     data: review,
-  //   })
-  //     .then(() => page(`/reviews/${review_id}`))
-  //     .catch(errorCallback)
+  Review.update = (review, review_id) =>
+    $.ajax({
+      url: `${__API_URL__}/api/v1/reviews/${review_id}`,
+      method: 'PUT',
+      data: review,
+    })
+      .then(() => page(`/reviews/${review_id}`))
+      .catch(errorCallback)
 
   // Review.destroy = review_id =>
   //   $.ajax({

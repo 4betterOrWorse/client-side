@@ -13,7 +13,7 @@
      <link rel="stylesheet" href="styles/style.css" />
      <script type="text/x-handlebars-template" id="home-list-template">
           <div class="home-view-container">
-            <section class="img-wrapper"><img src="images/sad.png"></section>
+            <section class="img-wrapper"><img src="/images/sad.png"></section>
             <div class="restaurant-overlay">
               <h3>{{inspection_business_name}}</h3>
               <p>{{address}}, {{city}} {{zip_code}}</p>
@@ -22,6 +22,28 @@
             </div>
           </div>
     </script>
+
+    <script type="text/x-handlebars-template" id="yelp-list-template">
+          <div class="yelp-view-container">
+            <section class="yelpImg"><img src="{{image_url}}"></section>
+              <h3>{{name}}</h3>
+              <p>{{rating}}</p>
+              <p>{{location.display_address}}</p>
+            <button class="detail-button"><a href="/{{id}}">view details</a></button>
+         </div>
+   </script>
+
+   <script type="text/x-handlebars-template" id="yelp-detail-template">
+    <div class="yelp-detail-view-container">
+      <section class="yelpImg"><img src="{{image_url}}"></section>
+        <h3>{{name}}</h3>
+        <p>{{rating}}</p>
+        <p class="{{review_count}}"></p>
+        <p>{{location.display_address}}</p>
+        <p>{{url}}</p>
+      <button class="detail-button"><a href="/{{address1}}">health record</a></button>
+    </div>
+</script>
 
     <script type="text/x-handlebars-template" id="restaurant-detail-template">
         <div class="detail-view-container">
@@ -54,6 +76,18 @@
         <div class="clear"></div>
         <section class="home-view container">
                 <div id="home-list"></div>
+        </section>
+
+        <section class="yelp-view container">
+            <form id="yelpSubmit">
+              <input type="text" id="yelpSearch" placeholder="search...">
+              <button type="submit" >Search</button>
+            </form> 
+            <div id="yelp-list"></div>
+        </section>
+
+        <section class="yelp-detail-view container">
+            <div id="yelp-detail" ></div>
         </section>
 
         <section class="detail-view container">
@@ -108,7 +142,9 @@
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models/users.js"></script>
     <script src="scripts/models/kc.js"></script>
+    <script src="scripts/models/yelp.js"></script>
     <script src="scripts/views/error-view.js"></script>
+    <script src="scripts/views/yelp-view.js"></script>
     <!-- <script src="scripts/views/admin-view.js"></script>  -->
     <script src="scripts/views/user-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>

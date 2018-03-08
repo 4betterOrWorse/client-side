@@ -33,6 +33,7 @@ $(document).ready(function() {
   restaurantsView.initView = function (ctx) {
     reset();
     $('.home-view').show();
+    // $('.create-review').show();
     $('#home-list').empty();
     module.KC.filter.map(rest => {
       $('#home-list').append(rest.toHtml())});
@@ -42,6 +43,7 @@ $(document).ready(function() {
     reset();
     $('.detail-view').show();
     $('#restaurant-detail').empty();
+
     let counter = 0;
     module.KC.one.map(rest => {
       $('#restaurant-detail').append(rest.toHtml1());
@@ -50,11 +52,52 @@ $(document).ready(function() {
       }
       counter++;
     })
+    restaurantsView.makeMap();
   };
 
-  // restaurantsView.initUpdateReview = function (ctx) {
-  //   reset();
-  // }
+  restaurantsView.makeMap = function(){
+    console.log(module.KC.one);
+    let chartKC = [];
+    chartKC = module.KC.one.filter((a, b, c) => c.findIndex(a2 => a.inspection_date === a2.inspection_date) === b);
+    console.log(chartKC);
+
+    chartKC.sort(function(a, b){
+      var dateA=new Date(a.inspection_date), dateB=new Date(b.inspection_date)
+      return dateA-dateB //sort by date ascending
+    });
+
+    
+    let restDates = [];
+    let restScore = [];
+    let restName = chartKC.inspection_business_name;
+    chartKC.forEach(function(element) {
+      restName = element.inspection_business_name;
+      console.log(new Date(element.inspection_date).toDateString('en-US'));
+      restDates.push(new Date(element.inspection_date).toDateString('en-US'));
+      restScore.push(element.inspection_score);
+    });
+
+    let ctxMap = document.getElementById('myChart');
+    let chart = new Chart(ctxMap, {
+      // The type of chart we want to create
+      type: 'bar',
+      // The data for our dataset
+      data: {
+        // labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels:restDates,
+        datasets: [{
+          label: restName,
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          // data: [0, 10, 5, 2, 20, 30, 45],
+          data:restScore,
+        }]
+      },
+
+      // Configuration options go here
+      options: {}
+    });
+  };
 
   module.restaurantsView = restaurantsView;
 

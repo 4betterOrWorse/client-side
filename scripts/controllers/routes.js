@@ -1,10 +1,11 @@
 'use strict';
-// page('/', ctx => app.KC.fetchAll(() => app.restaurantsView.initView(ctx)));
 
 page('/', ctx => {
   console.log('here');
   app.Yelp.fetchAll(app.yelpView.results)
 });
+
+page('/business', ctx => app.KC.fetchAll(() => app.restaurantsView.initView(ctx)));
 
 page('/reviews', ctx => {
   console.log('happened');

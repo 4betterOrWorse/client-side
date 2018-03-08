@@ -57,6 +57,15 @@ var __API_URL__ = 'http://localhost:3000';
 
   }
 
+  Review.delete = (review) => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/reviews/delete`,
+      method: 'DELETE',
+      data: review
+    })
+      .then(() => page('/reviews'));
+  };
+
   Review.cancel = () => {
     page('/reviews');
   };

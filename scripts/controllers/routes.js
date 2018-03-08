@@ -14,6 +14,8 @@ page('/reviews/update/:review_id', ctx => app.Review.fetchOne(ctx, app.reviewVie
 
 page('/reviews/:review_id', ctx => app.Review.fetchOne(() => app.reviewView.initSingleReivew(ctx)));
 
+page('/reviews/delete/:review_id', ctx => app.Review.fetchOne(ctx, app.reviewView.initDelete));
+
 page();
 
 // 

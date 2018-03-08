@@ -43,7 +43,6 @@ var app = app || {};
   }
 
   reviewView.initUpdateReview = (ctx) => {
-    console.log(ctx);
     reset();
     $('.update-review').show();
     $('#single-review-update').empty();
@@ -58,10 +57,8 @@ var app = app || {};
         review_id: ctx.review_id,
         username: $('#update-username').val(),
         review: $('#update-review').val() || ctx.review,
-        // published_on: $('#update-published_on').val() || ctx.published_on,
       };
-      console.log('ater review got defined');
-      console.log(review);
+
       module.Review.update(review);
 
     });
@@ -79,6 +76,30 @@ var app = app || {};
 
     $('#single-review-list').append(ctx.toHtml());
   }
+
+  reviewView.initDelete = (ctx) => {
+    reset();
+    $('.delete-review').show();
+    $('#delete-review-list').empty();
+    let template = Handlebars.compile($('#delete-review-template').text());
+    $('#delete-review-list').append(template(ctx));
+
+    $('#delete-btn').on('click', function(event){
+      event.preventDefault();
+      let review = {
+        review_id: ctx.review_id,
+        username: $('#delete-username').val(),
+        review: $('#delete-review').val() || ctx.review,
+      };
+      app.Review.delete(review);
+
+    });
+    $('#delete-cancel-btn').on('click', function(event){
+      event.preventDefault();
+      app.Review.cancel();
+    });
+
+  };
 
   module.reviewView = reviewView;
 

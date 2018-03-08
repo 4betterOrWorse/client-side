@@ -9,6 +9,11 @@ var app = app || {};
     $('.menu').slideUp(350);
   }
 
+  function errorCallback(err) {
+    console.error(err);
+    module.errorView.initErrorPage(err);
+  }
+
   // yelpView.initSearchView = function (callback) {
   //   yelpView.reset();
   //   $('.yelp-view').show()
@@ -23,8 +28,21 @@ var app = app || {};
     yelpView.reset();
     $('#yelp-detail').empty();
     $('.yelp-detail-view').show();
-    $('#yelp-detail').append(module.Yelp.one.toHtml());
+    $('#yelp-detail').append(module.Yelp.one.toHtml1());
+    // $('#healthButton').off().on('click', function(event) {
+    //   event.preventDefault();
+    //   let addr = {address: $(this).attr('href')};
+    //   console.log(addr);
+    //   $.get(`${__API_URL__}/api/v1/yelp/KC/${addr.address}`)
+    //     .then(module.KC.loadOne)
+    //     .then(callback)
+    //     .catch(errorCallback);
+    // })
   }
+
+  yelpView.initHealth = function () {
+    $('#yelp-detail').append(module.KC.one.toHtml1())
+  };
 
   yelpView.results = function () {
     $('#yelp-list').empty();

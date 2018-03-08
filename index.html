@@ -24,13 +24,12 @@
     </script>
 
     <script type="text/x-handlebars-template" id="yelp-list-template">
-         <div class="yelp-view-container">
-           <section class="yelpImg"><img src="{{image_url}}"></section>
-             <h3>{{name}}</h3>
-             <p>{{rating}}</p>
-             <p>{{location.display_address}}</p>
-             <button class="detail-button"><a href="/{{id}}">view details</a></button>
-           </div>
+          <div class="yelp-view-container">
+            <section class="yelpImg"><img src="{{image_url}}"></section>
+              <h3>{{name}}</h3>
+              <p>{{rating}}</p>
+              <p>{{location.display_address}}</p>
+            <button class="detail-button"><a href="/{{id}}">view details</a></button>
          </div>
    </script>
 
@@ -42,7 +41,7 @@
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
         <p>{{url}}</p>
-      </div>
+      <button class="detail-button"><a href="/{{address1}}">health record</a></button>
     </div>
 </script>
 

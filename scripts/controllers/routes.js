@@ -1,15 +1,14 @@
 'use strict';
 // page('/', ctx => app.KC.fetchAll(() => app.restaurantsView.initView(ctx)));
 
-page('/', ctx => app.Yelp.fetchAll(app.yelpView.results));
-
-page('/:id', ctx => {
-  app.Yelp.fetchOne(ctx, app.yelpView.initDetail);
+page('/', ctx => {
+  console.log('here');
+  app.Yelp.fetchAll(app.yelpView.results)
 });
 
-page('/business/:id', ctx => app.KC.fetchOne(ctx, app.restaurantsView.initDetail));
-
-page('/reviews', ctx => app.Review.fetchAll(() => app.reviewView.initReview(ctx)));
+page('/reviews', ctx => {
+  console.log('happened');
+  app.Review.fetchAll(() => app.reviewView.initReview(ctx))});
 
 page('/reviews/create', ctx => app.Review.create(ctx));
 
@@ -19,6 +18,10 @@ page('/reviews/:review_id', ctx => app.Review.fetchOne(() => app.reviewView.init
 
 page('/reviews/delete/:review_id', ctx => app.Review.fetchOne(ctx, app.reviewView.initDelete));
 
-page();
+page('/:id', ctx => {
+  app.Yelp.fetchOne(ctx, app.yelpView.initDetail);
+});
 
-// 
+page('/business/:id', ctx => app.KC.fetchOne(ctx, app.restaurantsView.initDetail));
+
+page();

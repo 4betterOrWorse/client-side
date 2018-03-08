@@ -9,31 +9,65 @@
     <link rel="stylesheet" href="styles/modules.css" />
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/392b4de92b/UntitledProject/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
 
-     <link rel="stylesheet" href="styles/style.css" />
-     <script type="text/x-handlebars-template" id="home-list-template">
-          <div class="home-view-container">
-            <section class="img-wrapper"><img src="images/sad.png"></section>
-            <div class="restaurant-overlay">
-              <h3>{{inspection_business_name}}</h3>
-              <p>{{address}}, {{city}} {{zip_code}}</p>
-              <p>Total Violation Points: {{inspection_score}}</p>
-              <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
-            </div>
-          </div>
+    <script type="text/x-handlebars-template" id="home-list-template">
+      <div class="home-view-container">
+        <section class="img-wrapper"><img src="images/sad.png"></section>
+        <div class="restaurant-overlay">
+          <h3>{{inspection_business_name}}</h3>
+          <p>{{address}}, {{city}} {{zip_code}}</p>
+          <p>Total Violation Points: {{inspection_score}}</p>
+          <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
+        </div>
+      </div>
     </script>
 
     <script type="text/x-handlebars-template" id="restaurant-detail-template">
-        <div class="detail-view-container">
-          <section class="img-wrapper"><img src="images/sad.png"></section>
-          <div class="restaurant-overlay">
-            <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
-            <p class="{{violation_record_id}}">{{inspection_result}}</p>
-            <p class="{{violation_record_id}}">{{inspection_score}}</p>
-            <p>{{violation_description}}</p>
-          </div>
+      <div class="detail-view-container">
+        <section class="img-wrapper"><img src="images/sad.png"></section>
+        <div class="restaurant-overlay">
+          <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
+          <p class="{{violation_record_id}}">{{inspection_result}}</p>
+          <p class="{{violation_record_id}}">{{inspection_score}}</p>
+          <p>{{violation_description}}</p>
         </div>
-  </script>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="review-list-template">
+      <div class="review-view-container">
+        <table class="review-list-table">
+          <tr class="table-header" id="{{index}}">
+            <th>No.</th>
+            <th>Review</th>
+          </tr>
+          <tr>
+            <td>{{index}}</td>
+            <td>{{review}}</td>
+          </tr>
+        </table>
+        <p>Date: {{published_on}}</p>
+        <a href=""><button>Update</button></a>
+        <a href=""><button>Delete</button></a>     
+      </div> 
+    </script>
+
+    <script id="update-review-template" type="text/x-handlebars-template">
+      <form class="update-review-item">
+        <section class="update-field">
+          <label>
+            <input type="text" id="update-username" placeholder="Enter Your Username">
+          </label>
+          <textarea id="update-description" rows="30" cols="30" placeholder="{{description}}"></textarea>
+  
+          <p>Are you sure you want to update this book?</p>
+          <button id="update-btn">Update</button>
+          <button id="cancel-btn">Cancel</button>          
+        </section>
+      </form>
+    </script>
+
   </head>
   <body>
       <main>
@@ -47,27 +81,33 @@
                 <a href="/"><li>Home</li></a>
                 <a href=""><li>My Reviews</li></a>
                 <a href=""><li>About</li></a>
-                <a href=""><li>Login</li></a>
+                <a href="/reviews"><li>Reviews</li></a>
             </ul>
           </div>
         <div class="clear"></div>
         <section class="home-view container">
-                <div id="home-list"></div>
+          <div id="home-list"></div>
         </section>
 
         <section class="detail-view container">
-            <div id="restaurant-detail" ></div>
+          <div id="restaurant-detail" ></div>
         </section>
 
         <section class="about-view container">
-                <div id="about-detail" ></div>
+          <div id="about-detail" ></div>
+        </section>
+
+        <section class="user-review container">
+          <div id="review-list" ></div>
+          <div id="review-submit-form" ></div>
+
         </section>
 
         <section class="my-reviews-view container">
-                <h3>add a review</h3>
-                <form id="add-review">
-                    <!-- <button class="button" type="submit">Sign In</button> -->
-                </form>
+          <h3>add a review</h3>
+          <form id="add-review">
+              <!-- <button class="button" type="submit">Sign In</button> -->
+          </form>
         </section>
 
         <section class="error-view container">
@@ -83,17 +123,6 @@
                     <button class="button" type="submit">Sign In</button>
                 </form>
          </section>
-         <section class="create-user-form-view container">
-          <p>Sign Up</p>
-            <form id="add-user-form">
-              <input type="text" name="firstname" placeholder="First Name" required>
-              <input type="text" name="lastname" placeholder="Last Name" required>
-              <input type="text" name="username" placeholder="Username" required>
-              <input type="text" name="email" placeholder="Email" required>
-              <input type="password" name="password" placeholder="Create Password" required>
-              <button class="button" type="submit">sign in</button>
-            </form>
-          </section>
          <footer class="footer"></footer>
       </main>
       
@@ -108,7 +137,9 @@
     <!-- <script src="scripts/views/admin-view.js"></script>  -->
     <script src="scripts/views/user-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
-    <script src="scripts/views/user-reviews-view.js"></script>
+    <script src="scripts/models/reviews.js"></script>
+    <script src="scripts/views/review-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>
+

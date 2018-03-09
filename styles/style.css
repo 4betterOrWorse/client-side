@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  width: 360px;
+  width: 100%;
   margin:0 auto;
   height: 100%;
   padding:0px;
@@ -215,7 +215,8 @@ button a:visited{
 }
 
 .restaurant-overlay {
-    float: left;
+   width:82%;
+   margin:0 auto;
 }
 
 footer {
@@ -283,4 +284,63 @@ footer {
 #yelp-detail{
   padding-top:20px;
 }
+
+.healthdetail{
+  font-size:14px;
+}
+.businessName{
+  margin:0;
+  padding-top:20px;
+  padding-bottom:0px;
+}
+.detail-view-container p{
+  padding:0px 0px 5px 0px;
+  margin:0px;
+  font-size:14px;
+}
+
+.detail-view-container h3{
+  padding:10px 0px 5px 0px;
+  margin:0px;
+}
+.homeH3{
+  padding-top:15px;
+  text-align: center;
+}
+
+
+@media (min-width: 600px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 50%;
+    float: left;
+}
+
+#yelp-list{
+  padding: 0px 20px;
+}
+
+
+@media (min-width: 900px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 33%;
+    float: left;
+}
+
+#yelp-list{
+  padding: 0px 20px;
+}
+
+
+}
+
 

@@ -16,7 +16,7 @@ var app = app || {};
     $('#review-list').empty();
     $('#review-submit-form').empty();
 
-    let reviewSubmitForm = $('#review-submit-form').append('<div class="post-review-container"><h3>Write your review</h3><form id="review-create-form"><input type="text" name="username" placeholder="User Name" required><textarea name="review" id="review" cols="50" rows="10"></textarea><button class="button" type="submit">Submit</button></form></div>');
+    let reviewSubmitForm = $('#review-submit-form').append('<div class="post-review-container"><h3>Write your review</h3><form id="review-create-form"><input type="text" name="username" placeholder="User Name" required><textarea name="review" id="review" cols="50" rows="10" placeholder="Please write your review here!"></textarea><button class="button" type="submit">Submit</button></form></div>');
 
     module.Review.all.map((review, index) => {
       review.index = index + 1;

@@ -54,7 +54,13 @@ $(document).ready(function() {
     restaurantsView.makeMap();
   };
 
+  function resetCanvas() {
+    $('#myChart').remove();
+    $('#canvasContainer').append('<canvas id="myChart"><canvas>');
+  }
+
   restaurantsView.makeMap = function(){
+    resetCanvas();
     let chartKC = [];
     chartKC = module.KC.one.filter((a, b, c) => c.findIndex(a2 => a.inspection_date === a2.inspection_date) === b);
 

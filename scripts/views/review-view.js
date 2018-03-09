@@ -36,7 +36,6 @@ var app = app || {};
         username: event.target.username.value,
         review: event.target.review.value,
       }
-      console.log(review.published_on);
       module.Review.create(review);
     })
 
@@ -51,7 +50,6 @@ var app = app || {};
     $('#single-review-update').append(template(ctx));
 
     $('#update-btn').on('click', function(event){
-      console.log('update button got hit');
       event.preventDefault();
       let review = {
         review_id: ctx.review_id,

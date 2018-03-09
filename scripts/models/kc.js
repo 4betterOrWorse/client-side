@@ -1,8 +1,8 @@
 'use strict';
 var app = app || {};
 
-// var __API_URL__ = 'http://localhost:3000';
-var __API_URL__ = 'https://dont-go.herokuapp.com';
+var __API_URL__ = 'http://localhost:3000';
+// var __API_URL__ = 'https://dont-go.herokuapp.com';
 
 (function(module) {
   function errorCallback(err) {
@@ -45,7 +45,6 @@ var __API_URL__ = 'https://dont-go.herokuapp.com';
       .catch(errorCallback);
 
   KC.fetchOne = (ctx, callback) => {
-    console.log(ctx);
     $.get(`${__API_URL__}/api/v1/rests/${ctx.params.id}`)
       .then(KC.loadOne)
       .then(callback)

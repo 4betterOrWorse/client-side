@@ -84,7 +84,7 @@
             <input type="text" id="update-username" placeholder="Enter Your Username" required>
           </label>
           <textarea id="update-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
-  
+
           <p>Are you sure you want to update this review?</p>
           <button id="update-btn">Update</button>
           <button id="cancel-btn">Cancel</button>          
@@ -118,7 +118,7 @@
             <ul>
                 <a href="/"><li>Home</li></a>
                 <a href="/business"><li>Don't Go List</li></a>
-                <a href=""><li>About</li></a>
+                <a href="/about"><li>About</li></a>
                 <a href="/reviews"><li>Reviews</li></a>
             </ul>
           </div>
@@ -144,8 +144,26 @@
           <div id="restaurant-detail" ></div>
         </section>
         <div style="clear:both"></div>
-        <section class="about-view container">
-          <div id="about-detail" ></div>
+
+        <section class="about-view container yelpImg">
+          <div id="about-detail">
+          <div id="aboutContainer1">
+            <img src="/images/Dawn.jpg">
+            <p>Dawn is very happy when she is doing something outdoors whether it's hiking, jogging or camping. Having grown up in Port Townsend she loves being surrounded by water, creativity and nutty people. She loves a good puzzle and her new favorite hobby is Codewars.</p>
+          </div>
+            <div id="aboutContainer2">
+            <img src="/images/peter.jpg">
+            <p>Peter Kim loves to spend time and go skiing with his children. He is enjoying working on codes and turning imagination into reality.</p>
+          </div>
+            <div id="aboutContainer3">
+            <img src="/images/austin.png">
+            <p>Hailing from the Emerald City of Angels that Never Sleeps, Austin is excited to bring the perspectives of three corners of the US of A together in the software development space. He brings an eclectic nature, from hipster music tastes, to foreign films, to even tarot cards. Can you tell he have a background in theatre? Hit him up to collaborate!</p>
+          </div>
+          <div id="aboutContainer4">
+            <img src="/images/Josiah.jpg">
+            <p>Josiah Green is a person who loves to get out and have an adventure. When he isn’t coding he is out cycling, hiking, or camping, and when it’s extra wet and cold out he likes to just stay in and work on his art or crack open a video game. Creation and exploration are necessities for happiness and coding is both those things. You can tell a computer to create just about anything in a multitude of different ways, and that’s pretty dang cool.</p>
+            </div>
+          </div>
         </section>
 
         <section class="user-review container">
@@ -176,6 +194,7 @@
     <script src="scripts/models/reviews.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/views/yelp-view.js"></script>
+    <script src="scripts/views/about-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/views/review-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>

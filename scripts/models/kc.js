@@ -1,6 +1,9 @@
 'use strict';
 var app = app || {};
 
+// var __API_URL__ = 'http://localhost:3000';
+var __API_URL__ = 'https://dont-go.herokuapp.com';
+
 (function(module) {
   function errorCallback(err) {
     console.error(err);
@@ -16,7 +19,8 @@ var app = app || {};
   }
 
   KC.prototype.toHtml1 = function() {
-    let template = Handlebars.compile($('#restaurant-detail-template').text());
+    let template = Handlebars.compile(
+      $('#restaurant-detail-template').text());
     return template(this);
   }
 

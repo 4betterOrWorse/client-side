@@ -1,120 +1,185 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Don't Go</title>
+    <title>Regret Nothing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/modules.css" />
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="https://i.icomoon.io/public/temp/392b4de92b/UntitledProject/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
 
-     <link rel="stylesheet" href="styles/style.css" />
+
      <script type="text/x-handlebars-template" id="home-list-template">
           <div class="home-view-container">
-            <section class="img-wrapper"><img src="images/sad.png"></section>
             <div class="restaurant-overlay">
-              <h3>{{inspection_business_name}}</h3>
+              <h3 class="businessName">{{inspection_business_name}}</h3>
               <p>{{address}}, {{city}} {{zip_code}}</p>
-              <p>Total Violation Points: {{inspection_score}}</p>
+              <p>Highest Violation Points: {{inspection_score}}</p>
               <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
             </div>
           </div>
     </script>
 
+    <script type="text/x-handlebars-template" id="yelp-list-template">
+          <div class="yelp-view-container">
+            <section class="yelpImg"><img src="{{image_url}}"></section>
+            <section class="yelpInfo"><h3>{{name}}</h3>
+              <img src="images/small_{{rating}}-2x.png" class="imgRating">&nbsp; &nbsp; &nbsp; 
+              <a href="{{url}}" target="_blank"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+              <p>{{location.display_address}}</p></section>
+            <button class="detail-button submit2" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
+         </div>
+   </script>
+
+   <script type="text/x-handlebars-template" id="yelp-detail-template">
+    <div class="yelp-detail-view-container">
+      <section class="yelpImg"><img src="{{image_url}}"></section>
+      <section class="yelpInfo">
+        <h3>{{name}}</h3>
+         <img src="images/small_{{rating}}-2x.png">&nbsp; &nbsp; &nbsp; 
+         <a href="{{url}}" target="_blank"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+         
+        <p class="{{review_count}}"></p>
+        <p>{{location.display_address}}</p>
+      
+      <button class="detail-button submit2" id="healthButton" data-id="{{location.address1}}">health record</button>
+    </div>
+</script>
+
     <script type="text/x-handlebars-template" id="restaurant-detail-template">
-        <div class="detail-view-container">
-          <!-- <section class="img-wrapper"><img src="images/sad.png"></section> -->
-          <div class="restaurant-overlay">
-            <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
-            <p class="{{violation_record_id}}">{{inspection_result}}</p>
-            <p class="{{violation_record_id}}">{{inspection_score}}</p>
-            <p>{{violation_description}}</p>
-          </div>
-          
+      <div class="detail-view-container ">
+        <div class="restaurant-overlay">
+          <h3 class="{{violation_record_id}}">{{inspection_business_name}}</h3>
+          <p class="{{violation_record_id}}">{{inspection_result}}</p>
+          <p class="{{violation_record_id}}">{{inspection_score}}</p>
+          <p>{{violation_description}}</p>
         </div>
-  </script>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="review-list-template">
+      <div class="review-view-container">
+        <table class="review-list-table">
+          <tr class="table-header" id="{{index}}">
+            <th>No.</th>
+            <th>Review</th>
+          </tr>
+          <tr>
+            <td>{{index}}</td>
+            <td>{{review}}</td>
+          </tr>
+        </table>
+        <p>Date: {{published_on}}</p>
+        <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
+        <a href="/reviews/delete/{{review_id}}"><button>Delete</button></a>     
+      </div> 
+    </script>
+
+    <script id="update-review-template" type="text/x-handlebars-template">
+      <form class="update-review-item">
+        <section class="update-field">
+          <label>
+            <input type="text" id="update-username" placeholder="Enter Your Username" required>
+          </label>
+          <textarea id="update-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
+  
+          <p>Are you sure you want to update this review?</p>
+          <button id="update-btn">Update</button>
+          <button id="cancel-btn">Cancel</button>          
+        </section>
+      </form>
+    </script>
+
+    <script id="delete-review-template" type="text/x-handlebars-template">
+      <form class="delete-review-item">
+        <section class="delete-field">
+          <label>
+            <input type="text" id="delete-username" placeholder="Enter Your Username" required>
+          </label>
+          <textarea id="delete-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
+  
+          <p>Are you sure you want to delete this review?</p>
+          <button id="delete-btn">Delete</button>
+          <button id="delete-cancel-btn">Cancel</button>          
+        </section>
+      </form>
+    </script>
   </head>
   <body>
       <main>
         <nav class="nav-menu">
-            <span><a href="/" target="_blank">Don't Go</a></span>
+            <span><a href="/">Regret Nothing</a></span>
             <button class="hamburger">&#9776;</button>
             <button class="cross">&#9776;</button>
         </nav>
           <div class="menu">
             <ul>
                 <a href="/"><li>Home</li></a>
-                <a href=""><li>My Reviews</li></a>
+                <a href="/business"><li>Don't Go List</li></a>
                 <a href=""><li>About</li></a>
-                <a href=""><li>Login</li></a>
+                <a href="/reviews"><li>Reviews</li></a>
             </ul>
           </div>
         <div class="clear"></div>
-        <section class="home-view container">
-                <div id="home-list"></div>
+        <section class="home-view container healthdetail">
+          <h3 class="homeH3">Current top worst health scores in Seattle</h3>
+          <div id="home-list"></div>
+        </section>
+
+        <section class="yelp-view container">
+            <form id="yelpSubmit">
+              <input type="text" id="yelpSearch" placeholder="search...">
+              <button type="submit" class="submit2">Search</button>
+            </form> 
+            <div id="yelp-list"></div>
+        </section>
+
+        <section class="yelp-detail-view container">
+            <div id="yelp-detail" ></div>
         </section>
 
         <section class="detail-view container">
-            <canvas id="myChart" width="480" height="480"></canvas>
-            <div id="restaurant-detail" ></div>
+          <canvas width="480" height="480"></canvas>
+          <div id="restaurant-detail" ></div>
         </section>
-
+        <div class="clear"></div>
         <section class="about-view container">
-                <div id="about-detail" ></div>
+          <div id="about-detail" ></div>
         </section>
 
-        <section class="my-reviews-view container">
-                <h3>add a review</h3>
-                <form id="add-review">
-                    <!-- <button class="button" type="submit">Sign In</button> -->
-                </form>
+        <section class="user-review container">
+          <div id="review-list" ></div>
+          <div id="review-submit-form" ></div>
+        </section>
+
+        <section class="update-review container">
+          <div id="single-review-update"></div>
+        </section>
+
+        <section class="delete-review container">
+          <div id="delete-review-list"></div>
         </section>
 
         <section class="error-view container">
             <h3>oops something went wrong</h3>
             <section id="error-message"></section>
         </section>
-
-        <section class="admin-view container">
-            <h2 id="admin-view-title">Enter Your Passphrase</h2>
-                <form id="admin-form">
-                    <input type="text" name="username" placeholder="enter username" required>
-                    <input type="number" name="password" placeholder="enter password" required>
-                    <button class="button" type="submit">Sign In</button>
-                </form>
-         </section>
-         <section class="create-user-form-view container">
-          <p>Sign Up</p>
-            <form id="add-user-form">
-              <input type="text" name="firstname" placeholder="First Name" required>
-              <input type="text" name="lastname" placeholder="Last Name" required>
-              <input type="text" name="username" placeholder="Username" required>
-              <input type="text" name="email" placeholder="Email" required>
-              <input type="password" name="password" placeholder="Create Password" required>
-              <button class="button" type="submit">sign in</button>
-            </form>
-          </section>
-         <footer class="footer"></footer>
       </main>
-      
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src"=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-    <script src="scripts/models/users.js"></script>
     <script src="scripts/models/kc.js"></script>
+    <script src="scripts/models/yelp.js"></script>
+    <script src="scripts/models/reviews.js"></script>
     <script src="scripts/views/error-view.js"></script>
-    <!-- <script src="scripts/views/admin-view.js"></script>  -->
-    <script src="scripts/views/user-view.js"></script>
+    <script src="scripts/views/yelp-view.js"></script>
     <script src="scripts/views/restaurants-view.js"></script>
-    <script src="scripts/views/user-reviews-view.js"></script>
+    <script src="scripts/views/review-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
-
-    <!-- <script src="scripts/views/chart.js"></script> -->
   </body>
 </html>
+

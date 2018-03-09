@@ -275,6 +275,88 @@ footer {
   width: 20%;
     vertical-align: bottom;
 }
+.review-view-container{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.review-view-container > p {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+}
+
+.review-submit-form h3{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  color: #333;
+}
+
+.td-index {
+  width: 25px;
+}
+
+#table-review-header{
+  text-align: center;
+  width: 300px;
+  padding: 8px;
+}
+
+
+.review-content{
+  border-radius: 5px;
+  border-style: none;
+  width: 300px;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  background-color: white;
+}
+
+.review-item-btn-container{
+  margin-left: 9%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+  margin-bottom: 2%;
+}
+.review-item-btn-container p{
+  margin-top: 3px;
+  margin-bottom: 3px; 
+  margin-right: 10%;
+  width: 150px;
+  display: inline-block;
+}
+
+.post-review-container > h3{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+#review-create-form > input{
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+textarea{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 3%;
+  height: 30%;
+  margin: 16px 5%;
+  background-color: white;
+
+}
+
+.review-item-btn-container h3{
+  font-size: 14px;
+}
 
 .imgRating{
   height:20px;

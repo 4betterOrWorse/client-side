@@ -126,7 +126,6 @@ span {
 a {
   color:#336699;
 }
-/* drop down end */
 
 .clear {
   clear:both;
@@ -208,23 +207,13 @@ button a:visited{
   text-decoration: none;
 }
 
-
 .img-wrapper {
     float: left;
-
 }
 
 .restaurant-overlay {
    width:82%;
    margin:0 auto;
-}
-
-footer {
-  width: 100%;
-  height:60px;
-  background-color: #648c99;
-  /* position:absolute;
-  bottom:0; */
 }
 
 .yelp-view-container{
@@ -248,7 +237,6 @@ footer {
   padding:20px 20px 0 20px;
   margin:0 auto;
 }
-
 
 .yelpInfo h3{
   margin-top:0px;
@@ -275,6 +263,88 @@ footer {
 .yelp-logo{
   width: 20%;
     vertical-align: bottom;
+}
+
+.review-view-container{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.review-view-container > p {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+}
+
+.review-submit-form h3{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  color: #333;
+}
+
+.td-index {
+  width: 25px;
+}
+
+#table-review-header{
+  text-align: center;
+  width: 300px;
+  padding: 8px;
+}
+
+.review-content{
+  border-radius: 5px;
+  border-style: none;
+  width: 300px;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  background-color: white;
+}
+
+.review-item-btn-container{
+  margin-left: 9%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+  margin-bottom: 2%;
+}
+
+.review-item-btn-container p{
+  margin-top: 3px;
+  margin-bottom: 3px; 
+  margin-right: 10%;
+  width: 150px;
+  display: inline-block;
+}
+
+.post-review-container > h3{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+#review-create-form > input{
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+textarea{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 3%;
+  height: 30%;
+  margin: 16px 5%;
+  background-color: white;
+}
+
+.review-item-btn-container h3{
+  font-size: 14px;
 }
 
 .imgRating{
@@ -308,7 +378,6 @@ footer {
   text-align: center;
 }
 
-
 @media (min-width: 600px) {
   main{
       width:75%;
@@ -318,25 +387,22 @@ footer {
     padding-top: 20px;
     width: 50%;
     float: left;
-}
+  }
 
+  .yelpImg{
+    width: 12em;
+  height: 12em;
+    margin:0 auto;
+    display: block;
+  }
 
-
-.yelpImg{
+  .yelpImg img{
+    display: block;
+  margin: 0 auto;
   width: 12em;
-height: 12em;
-  margin:0 auto;
-  display: block;
-}
-
-.yelpImg img{
-  display: block;
-margin: 0 auto;
-width: 12em;
-height: 12em;
-object-fit: cover;
-} 
-
+  height: 12em;
+  object-fit: cover;
+  } 
 
 @media (min-width: 900px) {
   main{
@@ -347,13 +413,15 @@ object-fit: cover;
     padding-top: 20px;
     width: 33%;
     float: left;
+  }
+
+  #yelp-list{
+    padding: 0px 20px;
+  }
 }
 
-#yelp-list{
-  padding: 0px 20px;
+#about-detail{
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0 1em;
 }
-
-
-}
-
-

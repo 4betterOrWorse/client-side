@@ -1,6 +1,5 @@
 'use strict';
 var app = app || {};
-var __API_URL__ = 'http://localhost:3000';
 
 (function(module) {
   function errorCallback(err) {
@@ -40,7 +39,6 @@ var __API_URL__ = 'http://localhost:3000';
   }
 
   Review.create = review => {
-    console.log(review);
     $.post(`${__API_URL__}/api/v1/reviews/create`, review)
       .then(() => page('/reviews'))
       .catch(errorCallback);

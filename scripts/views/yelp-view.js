@@ -20,6 +20,7 @@ var app = app || {};
     $('.yelp-detail-view').show();
     $('#yelp-detail').append(module.Yelp.one.toHtml1());
     $('#healthButton').off().on('click', function(event) {
+      $('#healthButton').hide();
       event.preventDefault();
       let addr = {address: $(this).attr('data-id')};
       $.get(`${__API_URL__}/api/v1/yelp/KC/${addr.address}`)
@@ -44,6 +45,7 @@ var app = app || {};
 
   yelpView.results = function () {
     $('#yelp-list').empty();
+    $('#how2').hide();
     module.Yelp.all.map(rest => {
       $('#yelp-list').append(rest.toHtml())
     });

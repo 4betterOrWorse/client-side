@@ -33,7 +33,6 @@ $(document).ready(function() {
   restaurantsView.initView = function (ctx) {
     reset();
     $('.home-view').show();
-    // $('.create-review').show();
     $('#home-list').empty();
     module.KC.filter.map(rest => {
       $('#home-list').append(rest.toHtml())});
@@ -56,23 +55,19 @@ $(document).ready(function() {
   };
 
   restaurantsView.makeMap = function(){
-    console.log(module.KC.one);
     let chartKC = [];
     chartKC = module.KC.one.filter((a, b, c) => c.findIndex(a2 => a.inspection_date === a2.inspection_date) === b);
-    console.log(chartKC);
 
     chartKC.sort(function(a, b){
       var dateA=new Date(a.inspection_date), dateB=new Date(b.inspection_date)
       return dateA-dateB //sort by date ascending
     });
 
-    
     let restDates = [];
     let restScore = [];
     let restName = chartKC.inspection_business_name;
     chartKC.forEach(function(element) {
       restName = element.inspection_business_name;
-      console.log(new Date(element.inspection_date).toDateString('en-US'));
       restDates.push(new Date(element.inspection_date).toDateString('en-US'));
       restScore.push(element.inspection_score);
     });

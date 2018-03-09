@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Don't Go</title>
+    <title>Regret Nothing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/base.css" />
@@ -16,7 +16,7 @@
               <h3>{{inspection_business_name}}</h3>
               <p>{{address}}, {{city}} {{zip_code}}</p>
               <p>Total Violation Points: {{inspection_score}}</p>
-              <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
+              <p class="detail-button submit2"><a href="/business/{{business_id}}">view details</a></p>
             </div>
           </div>
     </script>
@@ -25,10 +25,10 @@
           <div class="yelp-view-container">
             <section class="yelpImg"><img src="{{image_url}}"></section>
             <section class="yelpInfo"><h3>{{name}}</h3>
-              <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
-              <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
-              <p>{{location.display_address}}</p>
-            <button class="detail-button" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
+              <img src="images/small_{{rating}}-2x.png" class="imgRating">&nbsp; &nbsp; &nbsp; 
+              <a href="/{{id}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+              <p>{{location.display_address}}</p></section>
+            <button class="detail-button submit2" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
          </div>
    </script>
 
@@ -38,12 +38,12 @@
       <section class="yelpInfo">
         <h3>{{name}}</h3>
          <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
-         <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
+         <a href="{{url}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
          
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
-        <p>{{url}}</p>
-      <button class="detail-button" id="healthButton" data-id="{{location.address1}}">health record</button>
+      
+      <button class="detail-button submit2" id="healthButton" data-id="{{location.address1}}">health record</button>
     </div>
 </script>
 
@@ -109,7 +109,7 @@
   <body>
       <main>
         <nav class="nav-menu">
-            <span><a href="/">Don't Go</a></span>
+            <span><a href="/">Regret Nothing</a></span>
             <button class="hamburger">&#9776;</button>
             <button class="cross">&#9776;</button>
         </nav>
@@ -129,7 +129,7 @@
         <section class="yelp-view container">
             <form id="yelpSubmit">
               <input type="text" id="yelpSearch" placeholder="search...">
-              <button type="submit" >Search</button>
+              <button type="submit" class="submit2">Search</button>
             </form> 
             <div id="yelp-list"></div>
         </section>
@@ -164,14 +164,10 @@
             <h3>oops something went wrong</h3>
             <section id="error-message"></section>
         </section>
-        <footer class="footer"></footer>
       </main>
-      
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src"=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models/kc.js"></script>

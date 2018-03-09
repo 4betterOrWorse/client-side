@@ -4,6 +4,8 @@ page('/', ctx => {
   app.Yelp.fetchAll(app.yelpView.results)
 });
 
+page('/about', app.aboutUs.initAboutUsView);
+
 page('/business', ctx => app.KC.fetchAll(() => app.restaurantsView.initView(ctx)));
 
 page('/reviews', ctx => {

@@ -33,7 +33,6 @@ $(document).ready(function() {
   restaurantsView.initView = function (ctx) {
     reset();
     $('.home-view').show();
-    // $('.create-review').show();
     $('#home-list').empty();
     module.KC.filter.map(rest => {
       $('#home-list').append(rest.toHtml())});

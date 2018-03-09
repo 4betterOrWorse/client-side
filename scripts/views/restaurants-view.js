@@ -33,7 +33,6 @@ $(document).ready(function() {
   restaurantsView.initView = function (ctx) {
     reset();
     $('.home-view').show();
-    // $('.create-review').show();
     $('#home-list').empty();
     module.KC.filter.map(rest => {
       $('#home-list').append(rest.toHtml())});
@@ -55,7 +54,13 @@ $(document).ready(function() {
     restaurantsView.makeMap();
   };
 
+  function resetCanvas() {
+    $('#myChart').remove();
+    $('#canvasContainer').append('<canvas id="myChart"><canvas>');
+  }
+
   restaurantsView.makeMap = function(){
+    resetCanvas();
     let chartKC = [];
     chartKC = module.KC.one.filter((a, b, c) => c.findIndex(a2 => a.inspection_date === a2.inspection_date) === b);
 
@@ -82,7 +87,7 @@ $(document).ready(function() {
         // labels: ["January", "February", "March", "April", "May", "June", "July"],
         labels:restDates,
         datasets: [{
-          label: restName,
+          label: 'Total violation points',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           // data: [0, 10, 5, 2, 20, 30, 45],

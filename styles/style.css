@@ -9,7 +9,7 @@ body {
 }
 
 main {
-  width: 360px;
+  width: 100%;
   margin:0 auto;
   height: 100%;
   padding:0px;
@@ -126,26 +126,9 @@ span {
 a {
   color:#336699;
 }
-/* drop down end */
 
 .clear {
   clear:both;
-}
-
-.error-view {
-  display:none;
-}
-
-.admin-view {
-  display:none;
-}
-
-.my-reviews-view {
-  display:none;
-}
-
-.create-user-form-view {
-  display:none;
 }
 
 .create-user-form-view p {
@@ -208,22 +191,13 @@ button a:visited{
   text-decoration: none;
 }
 
-
 .img-wrapper {
     float: left;
-
 }
 
 .restaurant-overlay {
-    float: left;
-}
-
-footer {
-  width: 100%;
-  height:60px;
-  background-color: #648c99;
-  /* position:absolute;
-  bottom:0; */
+   width:82%;
+   margin:0 auto;
 }
 
 .yelp-view-container{
@@ -243,11 +217,22 @@ footer {
   margin:0 auto;
 }
 
+.aboutImg{
+  width:90%;
+  margin:0 auto;
+  display: block;
+}
+
+.aboutImg img{
+  max-width:100%;
+  display: block;
+  margin:0 auto;
+}
+
 .yelpInfo{
   padding:20px 20px 0 20px;
   margin:0 auto;
 }
-
 
 .yelpInfo h3{
   margin-top:0px;
@@ -276,11 +261,181 @@ footer {
     vertical-align: bottom;
 }
 
+.review-view-container{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.review-view-container > p {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+}
+
+.review-submit-form h3{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  color: #333;
+}
+
+.td-index {
+  width: 25px;
+}
+
+#table-review-header{
+  text-align: center;
+  width: 300px;
+  padding: 8px;
+}
+
+.review-content{
+  border-radius: 5px;
+  border-style: none;
+  width: 300px;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  background-color: white;
+}
+
+.review-item-btn-container{
+  margin-left: 9%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 10px;
+  margin-bottom: 2%;
+}
+
+.review-item-btn-container p{
+  margin-top: 3px;
+  margin-bottom: 3px; 
+  margin-right: 10%;
+  width: 150px;
+  display: inline-block;
+}
+
+.post-review-container > h3{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+#review-create-form > input{
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+textarea{
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 3%;
+  height: 30%;
+  margin: 16px 5%;
+  background-color: white;
+}
+
+.review-item-btn-container h3{
+  font-size: 14px;
+}
+
 .imgRating{
   height:20px;
 }
 
 #yelp-detail{
   padding-top:20px;
+}
+
+.healthdetail{
+  font-size:14px;
+}
+.businessName{
+  margin:0;
+  padding-top:20px;
+  padding-bottom:0px;
+}
+.detail-view-container p{
+  padding:0px 0px 5px 0px;
+  margin:0px;
+  font-size:14px;
+}
+
+.detail-view-container h3{
+  padding:10px 0px 5px 0px;
+  margin:0px;
+}
+.homeH3{
+  padding-top:15px;
+  text-align: center;
+}
+
+#about-detail{
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0 1em;
+}
+
+@media (min-width: 600px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 50%;
+    float: left;
+  }
+
+  .yelpImg{
+    width: 12em;
+    height: 12em;
+    margin:0 auto;
+    display: block;
+  }
+
+  .yelpImg img{
+    display: block;
+    margin: 0 auto;
+    width: 12em;
+    height: 12em;
+    object-fit: cover;
+  }
+
+  .aboutContainer {
+    width: 18em;
+    height: 40em;
+    padding: 0px 5px;
+    vertical-align: top;
+    margin: 0 auto;
+  }
+
+  .aboutImg img{
+    width: 100%;
+  }
+   
+  .about-view {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 33%;
+    float: left;
+  }
+
+  #yelp-list{
+    padding: 0px 20px;
+  }
 }
 

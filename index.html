@@ -20,9 +20,9 @@
      <script type="text/x-handlebars-template" id="home-list-template">
           <div class="home-view-container">
             <div class="restaurant-overlay">
-              <h3>{{inspection_business_name}}</h3>
+              <h3 class="businessName">{{inspection_business_name}}</h3>
               <p>{{address}}, {{city}} {{zip_code}}</p>
-              <p>Total Violation Points: {{inspection_score}}</p>
+              <p>Highest Violation Points: {{inspection_score}}</p>
               <p class="detail-button"><a href="/business/{{business_id}}">view details</a></p>
             </div>
           </div>
@@ -33,7 +33,7 @@
             <section class="yelpImg"><img src="{{image_url}}"></section>
             <section class="yelpInfo"><h3>{{name}}</h3>
               <img src="images/small_{{rating}}-2x.png" class="imgRating">&nbsp; &nbsp; &nbsp; 
-              <a href="/{{id}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+              <a href="{{url}}" target="_blank"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
               <p>{{location.display_address}}</p></section>
             <button class="detail-button submit2" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
          </div>
@@ -44,8 +44,8 @@
       <section class="yelpImg"><img src="{{image_url}}"></section>
       <section class="yelpInfo">
         <h3>{{name}}</h3>
-         <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
-         <a href="{{url}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+         <img src="images/small_{{rating}}-2x.png">&nbsp; &nbsp; &nbsp; 
+         <a href="{{url}}" target="_blank"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
          
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
@@ -69,17 +69,19 @@
       <div class="review-view-container">
         <table class="review-list-table">
           <tr class="table-header" id="{{index}}">
-            <th>No.</th>
-            <th>Review</th>
+            <th class="td-index">No.</th>
+            <th id="table-review-header">Review</th>
           </tr>
           <tr>
-            <td>{{index}}</td>
-            <td>{{review}}</td>
+            <td class="td-index">{{index}}</td>
+            <td class="review-content">{{review}}</td>
           </tr>
         </table>
-        <p>Date: {{published_on}}</p>
-        <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
-        <a href="/reviews/delete/{{review_id}}"><button>Delete</button></a>     
+        <div class="review-item-btn-container">
+          <p>Date: {{published_on}}</p>
+          <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
+          <a href="/reviews/delete/{{review_id}}" class="table-delete-btn"><button>Delete</button></a>
+        </div>
       </div> 
     </script>
 
@@ -90,10 +92,11 @@
             <input type="text" id="update-username" placeholder="Enter Your Username" required>
           </label>
           <textarea id="update-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
-  
-          <p>Are you sure you want to update this review?</p>
-          <button id="update-btn">Update</button>
-          <button id="cancel-btn">Cancel</button>          
+          <div class="review-item-btn-container">
+            <h3>Are you sure you want to update this review?</h3>
+            <button id="update-btn">Update</button>
+            <button id="cancel-btn">Cancel</button>
+          </div>      
         </section>
       </form>
     </script>
@@ -106,9 +109,11 @@
           </label>
           <textarea id="delete-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
   
-          <p>Are you sure you want to delete this review?</p>
-          <button id="delete-btn">Delete</button>
-          <button id="delete-cancel-btn">Cancel</button>          
+          <div class="review-item-btn-container">
+            <h3>Are you sure you want to delete this review?</h3>
+            <button id="delete-btn">Delete</button>
+            <button id="delete-cancel-btn">Cancel</button>
+          </div>         
         </section>
       </form>
     </script>
@@ -124,12 +129,13 @@
             <ul>
                 <a href="/"><li>Home</li></a>
                 <a href="/business"><li>Don't Go List</li></a>
-                <a href=""><li>About</li></a>
+                <a href="/about"><li>About</li></a>
                 <a href="/reviews"><li>Reviews</li></a>
             </ul>
           </div>
         <div class="clear"></div>
-        <section class="home-view container">
+        <section class="home-view container healthdetail">
+          <h3 class="homeH3">Current top worst health scores in Seattle</h3>
           <div id="home-list"></div>
         </section>
 
@@ -147,12 +153,31 @@
         </section>
 
         <section class="detail-view container">
-          <canvas id="myChart" width="480" height="480"></canvas>
+          <div id="canvasContainer"><canvas id="myChart" width="480" height="480"></canvas></div>
           <div id="restaurant-detail" ></div>
         </section>
-        <div style="clear:both"></div>
-        <section class="about-view container">
-          <div id="about-detail" ></div>
+        <div class="clear"></div>
+
+        <section class="about-view container aboutImg">
+          <div id="about-detail">
+            <div class="aboutContainer">
+              <img src="/images/Dawn.jpg">
+              <p>Dawn is very happy when she is doing something outdoors whether it's hiking, jogging or camping. Having grown up in Port Townsend she loves being surrounded by water, creativity and nutty people. She loves a good puzzle and her new favorite hobby is Codewars.</p>
+            </div>
+              <div class="aboutContainer">
+              <img src="/images/peter.jpg">
+              <p>Peter loves to spend time and go skiing with his children. He is enjoying working on codes and turning imagination into reality.</p>
+            </div>
+              <div class="aboutContainer">
+              <img src="/images/austin.png">
+              <p>Hailing from the Emerald City of Angels that Never Sleeps, Austin is excited to bring the perspectives of three corners of the US of A together in the software development space. He brings an eclectic nature, from hipster music tastes, to foreign films, to even tarot cards. Can you tell he have a background in theatre? Hit him up to collaborate!</p>
+            </div>
+            <div class="aboutContainer">
+              <img src="/images/Josiah.jpg">
+              <p>Josiah Green is a person who loves to get out and have an adventure. When he isn’t coding he is out cycling, hiking, or camping, and when it’s extra wet and cold out he likes to just stay in and work on his art or crack open a video game. Creation and exploration are necessities for happiness and coding is both those things. You can tell a computer to create just about anything in a multitude of different ways, and that’s pretty dang cool.</p>
+            </div>
+          </div>
+          <div class="clear"></div>
         </section>
 
         <section class="user-review container">
@@ -183,8 +208,9 @@
     <script src="scripts/models/reviews.js"></script>
     <script src="scripts/views/error-view.js"></script>
     <script src="scripts/views/yelp-view.js"></script>
-    <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/views/review-view.js"></script>
+    <script src="scripts/views/about-view.js"></script>
+    <script src="scripts/views/restaurants-view.js"></script>
     <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>

@@ -33,6 +33,7 @@ var app = app || {};
   yelpView.initHealth = function () {
     let counter = 0;
     $('.detail-view').show();
+    $('#restaurant-detail').empty();
     module.KC.one.map(rest => {
       $('#restaurant-detail').append(rest.toHtml1());
       if(counter !== 0 && rest.inspection_date === module.KC.one[counter-1].inspection_date){

@@ -4,12 +4,13 @@ var app = app || {};
 
 (function (module) {
 
-  const aboutUsView = {};
+  const aboutUs = {};
 
-  // aboutUsView.initAboutUsView = function () {
-  //   $('.container').hide();
-  //   $('.nav-menu').slideUp(350);
-  //   $('.about-us').show();
-  // }
-  module.aboutUsview = aboutUsView;
+  aboutUs.initAboutUsView = function () {
+    $('.container').hide();
+    $('.menu').slideUp(250);
+    $('.about-view').show();
+  }
+
+  module.aboutUs = aboutUs;
 })(app);

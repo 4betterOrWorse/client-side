@@ -131,22 +131,6 @@ a {
   clear:both;
 }
 
-.error-view {
-  display:none;
-}
-
-.admin-view {
-  display:none;
-}
-
-.my-reviews-view {
-  display:none;
-}
-
-.create-user-form-view {
-  display:none;
-}
-
 .create-user-form-view p {
   color: white;
   font-size: 18px;
@@ -403,6 +387,7 @@ textarea{
   height: 12em;
   object-fit: cover;
   } 
+}
 
 @media (min-width: 900px) {
   main{

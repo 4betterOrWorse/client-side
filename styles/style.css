@@ -182,6 +182,33 @@ input {
   margin: 16px 5% 20px;
 } 
 
+.submit2 {
+  height:35px;
+  border-radius: 4px;
+  background-color: #648c99;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 90%;
+  margin: 16px 5% 20px;
+} 
+
+button a:link{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+button a:active{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+button a:visited{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+
+
 .img-wrapper {
     float: left;
 
@@ -199,6 +226,11 @@ footer {
   bottom:0; */
 }
 
+.yelp-view-container{
+  padding-top:20px;
+
+}
+
 .yelpImg{
   width:90%;
   margin:0 auto;
@@ -206,13 +238,13 @@ footer {
 }
 
 .yelpImg img{
-  max-width:90%;
+  max-width:100%;
   display: block;
   margin:0 auto;
 }
 
 .yelpInfo{
-  padding:20px;
+  padding:20px 20px 0 20px;
   margin:0 auto;
 }
 
@@ -226,7 +258,7 @@ footer {
 
 .yelpInfo p{
   margin-top:0px;
-  padding-top:0px;
+  padding-top:8px;
   padding-bottom:0px;
   margin-bottom:5px;
 }
@@ -242,5 +274,13 @@ footer {
 .yelp-logo{
   width: 20%;
     vertical-align: bottom;
+}
+
+.imgRating{
+  height:20px;
+}
+
+#yelp-detail{
+  padding-top:20px;
 }
 

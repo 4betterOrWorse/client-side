@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
   <head>
-    <title>Don't Go</title>
+    <meta description = "Class Cards">
+    <meta charset="utf-8">
+    <title>Regret Nothing</title>
+    <meta property="og:title" content="Regret Nothing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.regretnothingapp.com/" />
+    <meta property="og:description" content="Never regret what you eat again! Regret Nothing is a webbapp that allows for displaying yelp reviews of businesses in Seattle along with King County's Health Inspection data." />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/base.css" />
@@ -26,10 +33,10 @@
           <div class="yelp-view-container">
             <section class="yelpImg"><img src="{{image_url}}"></section>
             <section class="yelpInfo"><h3>{{name}}</h3>
-              <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
-              <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
-              <p>{{location.display_address}}</p>
-            <button class="detail-button" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
+              <img src="images/small_{{rating}}-2x.png" class="imgRating">&nbsp; &nbsp; &nbsp; 
+              <a href="/{{id}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
+              <p>{{location.display_address}}</p></section>
+            <button class="detail-button submit2" id="yelpSubmit"><a href="/{{id}}">view details</a></button>
          </div>
    </script>
 
@@ -39,12 +46,12 @@
       <section class="yelpInfo">
         <h3>{{name}}</h3>
          <img src="images/small_{{rating}}.png">&nbsp; &nbsp; &nbsp; 
-         <img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo">
+         <a href="{{url}}"><img src="images/Yelp_trademark_RGB_outline.png" class="yelp-logo"></a>
          
         <p class="{{review_count}}"></p>
         <p>{{location.display_address}}</p>
-        <p>{{url}}</p>
-      <button class="detail-button" id="healthButton" data-id="{{location.address1}}">health record</button>
+      
+      <button class="detail-button submit2" id="healthButton" data-id="{{location.address1}}">health record</button>
     </div>
 </script>
 
@@ -116,7 +123,7 @@
   <body>
       <main>
         <nav class="nav-menu">
-            <span><a href="/">Don't Go</a></span>
+            <span><a href="/">Regret Nothing</a></span>
             <button class="hamburger">&#9776;</button>
             <button class="cross">&#9776;</button>
         </nav>
@@ -136,7 +143,8 @@
         <section class="yelp-view container">
             <form id="yelpSubmit">
               <input type="text" id="yelpSearch" placeholder="search...">
-              <button type="submit" >Search</button>
+              <button type="submit" class="submit2">Search</button>
+              <p id="how2">Ever wonder why your favorite restaurant's food tastes so good ... yet you keep getting sick? Use our app to search the Seattle area for a restaurant name or type of cuisine that suites your fancy. Once you've found what you're looking for, click the details link to take you to a page where you can find the King County Health Inspection data for that business.</p>
             </form> 
             <div id="yelp-list"></div>
         </section>
@@ -149,7 +157,7 @@
           <canvas id="myChart" width="480" height="480"></canvas>
           <div id="restaurant-detail" ></div>
         </section>
-
+        <div style="clear:both"></div>
         <section class="about-view container">
           <div id="about-detail" ></div>
         </section>
@@ -171,14 +179,10 @@
             <h3>oops something went wrong</h3>
             <section id="error-message"></section>
         </section>
-        <footer class="footer"></footer>
       </main>
-      
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src"=https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="scripts/models/kc.js"></script>

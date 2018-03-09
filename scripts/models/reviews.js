@@ -39,7 +39,6 @@ var app = app || {};
   }
 
   Review.create = review => {
-    console.log(review);
     $.post(`${__API_URL__}/api/v1/reviews/create`, review)
       .then(() => page('/reviews'))
       .catch(errorCallback);

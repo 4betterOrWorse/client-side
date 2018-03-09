@@ -1,7 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
   <head>
+    <meta description = "Class Cards">
+    <meta charset="utf-8">
     <title>Regret Nothing</title>
+    <meta property="og:title" content="Regret Nothing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.regretnothingapp.com/" />
+    <meta property="og:description" content="Never regret what you eat again! Regret Nothing is a webbapp that allows for displaying yelp reviews of businesses in Seattle along with King County's Health Inspection data." />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/base.css" />
@@ -63,17 +70,19 @@
       <div class="review-view-container">
         <table class="review-list-table">
           <tr class="table-header" id="{{index}}">
-            <th>No.</th>
-            <th>Review</th>
+            <th class="td-index">No.</th>
+            <th id="table-review-header">Review</th>
           </tr>
           <tr>
-            <td>{{index}}</td>
-            <td>{{review}}</td>
+            <td class="td-index">{{index}}</td>
+            <td class="review-content">{{review}}</td>
           </tr>
         </table>
-        <p>Date: {{published_on}}</p>
-        <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
-        <a href="/reviews/delete/{{review_id}}"><button>Delete</button></a>     
+        <div class="review-item-btn-container">
+          <p>Date: {{published_on}}</p>
+          <a href="/reviews/update/{{review_id}}"><button>Update</button></a>
+          <a href="/reviews/delete/{{review_id}}" class="table-delete-btn"><button>Delete</button></a>
+        </div>
       </div> 
     </script>
 
@@ -84,10 +93,11 @@
             <input type="text" id="update-username" placeholder="Enter Your Username" required>
           </label>
           <textarea id="update-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
-
-          <p>Are you sure you want to update this review?</p>
-          <button id="update-btn">Update</button>
-          <button id="cancel-btn">Cancel</button>          
+          <div class="review-item-btn-container">
+            <h3>Are you sure you want to update this review?</h3>
+            <button id="update-btn">Update</button>
+            <button id="cancel-btn">Cancel</button>
+          </div>      
         </section>
       </form>
     </script>
@@ -100,9 +110,11 @@
           </label>
           <textarea id="delete-review" rows="10" cols="50" placeholder="{{review}}"></textarea>
   
-          <p>Are you sure you want to delete this review?</p>
-          <button id="delete-btn">Delete</button>
-          <button id="delete-cancel-btn">Cancel</button>          
+          <div class="review-item-btn-container">
+            <h3>Are you sure you want to delete this review?</h3>
+            <button id="delete-btn">Delete</button>
+            <button id="delete-cancel-btn">Cancel</button>
+          </div>         
         </section>
       </form>
     </script>
@@ -131,6 +143,7 @@
             <form id="yelpSubmit">
               <input type="text" id="yelpSearch" placeholder="search...">
               <button type="submit" class="submit2">Search</button>
+              <p id="how2">Ever wonder why your favorite restaurant's food tastes so good ... yet you keep getting sick? Use our app to search the Seattle area for a restaurant name or type of cuisine that suites your fancy. Once you've found what you're looking for, click the details link to take you to a page where you can find the King County Health Inspection data for that business.</p>
             </form> 
             <div id="yelp-list"></div>
         </section>

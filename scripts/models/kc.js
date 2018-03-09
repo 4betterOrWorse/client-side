@@ -36,6 +36,7 @@ var __API_URL__ = 'https://dont-go.herokuapp.com';
 
   KC.loadOne = rows => {
     KC.one = JSON.parse(rows).sort((a, b) => (new Date(b.inspection_date)) - (new Date(a.inspection_date))).map(rest => new KC(rest));
+    KC.one = KC.one.filter(a => a.inspection_result !== 'Complete');
   }
 
   KC.fetchAll = callback =>

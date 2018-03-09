@@ -394,11 +394,15 @@ textarea{
     width: 50%;
     float: left;
   }
+  .yelp-detail-view-container{
+    padding-top: 20px;
+    width: 50%;
+  }
 
   .yelpImg{
     width: 12em;
     height: 12em;
-    margin:0 auto;
+    margin:20px;
     display: block;
   }
 
@@ -409,6 +413,12 @@ textarea{
     height: 12em;
     object-fit: cover;
   }
+
+  .detail-Yelp-logo{
+    width: 15%;
+    vertical-align: bottom;
+  }
+  
   
   #about-detail{
     font-size: 1em;

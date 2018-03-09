@@ -379,6 +379,10 @@ textarea{
   line-height: 1.5em;
   padding: 0 1em;
 }
+.about-view {
+  margin: 0 auto;
+  padding-top:25px;
+}
 
 @media (min-width: 600px) {
   main{
@@ -405,13 +409,23 @@ textarea{
     height: 12em;
     object-fit: cover;
   }
+  
+  #about-detail{
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 1em;
+    margin: 0 auto;
+    width: 100%;
+  }
 
+ 
   .aboutContainer {
-    width: 18em;
-    height: 40em;
-    padding: 0px 5px;
+    padding: 0px 5%;
     vertical-align: top;
     margin: 0 auto;
+    width: 45%;
+    display: inline-block;
+    text-align: left;
   }
 
   .aboutImg img{
@@ -420,7 +434,11 @@ textarea{
    
   .about-view {
     margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-top:25px;
   }
+
 }
 
 @media (min-width: 900px) {

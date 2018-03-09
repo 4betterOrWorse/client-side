@@ -320,9 +320,22 @@ footer {
     float: left;
 }
 
-#yelp-list{
-  padding: 0px 20px;
+
+
+.yelpImg{
+  width: 12em;
+height: 12em;
+  margin:0 auto;
+  display: block;
 }
+
+.yelpImg img{
+  display: block;
+margin: 0 auto;
+width: 12em;
+height: 12em;
+object-fit: cover;
+} 
 
 
 @media (min-width: 900px) {

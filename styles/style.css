@@ -217,6 +217,18 @@ button a:visited{
   margin:0 auto;
 }
 
+.aboutImg{
+  width:90%;
+  margin:0 auto;
+  display: block;
+}
+
+.aboutImg img{
+  max-width:100%;
+  display: block;
+  margin:0 auto;
+}
+
 .yelpInfo{
   padding:20px 20px 0 20px;
   margin:0 auto;
@@ -362,6 +374,12 @@ textarea{
   text-align: center;
 }
 
+#about-detail{
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0 1em;
+}
+
 @media (min-width: 600px) {
   main{
       width:75%;
@@ -375,18 +393,34 @@ textarea{
 
   .yelpImg{
     width: 12em;
-  height: 12em;
+    height: 12em;
     margin:0 auto;
     display: block;
   }
 
   .yelpImg img{
     display: block;
-  margin: 0 auto;
-  width: 12em;
-  height: 12em;
-  object-fit: cover;
-  } 
+    margin: 0 auto;
+    width: 12em;
+    height: 12em;
+    object-fit: cover;
+  }
+
+  .aboutContainer {
+    width: 18em;
+    height: 40em;
+    padding: 0px 5px;
+    vertical-align: top;
+    margin: 0 auto;
+  }
+
+  .aboutImg img{
+    width: 100%;
+  }
+   
+  .about-view {
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 900px) {
@@ -405,8 +439,3 @@ textarea{
   }
 }
 
-#about-detail{
-  font-size: 1em;
-  line-height: 1.5em;
-  padding: 0 1em;
-}

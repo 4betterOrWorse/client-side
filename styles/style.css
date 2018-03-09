@@ -24,6 +24,14 @@ span a {
   margin-left: 10px;
 }
 
+.linkedIn {
+  content: "\eac9";
+}
+
+.gitHub {
+  content: "\eab0";
+}
+
 /* dropdown menu */
 nav {
 	width:100%;
@@ -283,7 +291,8 @@ button a:visited{
 }
 
 .td-index {
-  width: 25px;
+  width: 10%;
+  text-align: center;
 }
 
 #table-review-header{
@@ -406,20 +415,78 @@ textarea{
     object-fit: cover;
   }
 
-  .aboutContainer {
-    width: 18em;
-    height: 40em;
-    padding: 0px 5px;
-    vertical-align: top;
+  .detailImg img{
+    display: block;
     margin: 0 auto;
+    width: 30em;
   }
 
+  #about-detail{
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 1em;
+    margin: 0 auto;
+    width: 100%;
+  }
+ 
+ 
+  .aboutContainer {
+    padding: 0px 5%;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 45%;
+    display: inline-block;
+    text-align: left;
+  }
+ 
   .aboutImg img{
     width: 100%;
   }
-   
+  
   .about-view {
     margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-top:25px;
+  }
+
+  #yelp-detail-img {
+    width: 20em;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  .yelp-detail-view-container {
+    text-align: center;
+  }
+  .yelp-detail-view-container h3{
+    font-size: 30px;
+    margin-top: 5px;
+  }
+
+  #table-review-header{
+    text-align: center;
+    padding: 8px;
+  }
+
+  .review-item-btn-container p{
+    margin-top: 3px;
+    margin-bottom: 3px; 
+    margin-right: 73%;
+    width: 150px;
+    display: inline-block;
+  }
+
+  .review-content{
+    border-radius: 5px;
+    border-style: none;
+    padding: 20px;
+    height: 25px;
+    margin: 16px 5%;
+    background-color: white;
+  }
+
+  .review-list-table{
+    width: 100%;
   }
 }
 
@@ -438,4 +505,3 @@ textarea{
     padding: 0px 20px;
   }
 }
-

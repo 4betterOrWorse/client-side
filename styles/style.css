@@ -24,6 +24,14 @@ span a {
   margin-left: 10px;
 }
 
+.linkedIn {
+  content: "\eac9";
+}
+
+.gitHub {
+  content: "\eab0";
+}
+
 /* dropdown menu */
 nav {
 	width:100%;
@@ -406,20 +414,52 @@ textarea{
     object-fit: cover;
   }
 
-  .aboutContainer {
-    width: 18em;
-    height: 40em;
-    padding: 0px 5px;
-    vertical-align: top;
+  .detailImg img{
+    display: block;
     margin: 0 auto;
+    width: 30em;
   }
 
+  #about-detail{
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 1em;
+    margin: 0 auto;
+    width: 100%;
+  }
+ 
+ 
+  .aboutContainer {
+    padding: 0px 5%;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 45%;
+    display: inline-block;
+    text-align: left;
+  }
+ 
   .aboutImg img{
     width: 100%;
   }
-   
+  
   .about-view {
     margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-top:25px;
+  }
+
+  #yelp-detail-img {
+    width: 20em;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  .yelp-detail-view-container {
+    text-align: center;
+  }
+  .yelp-detail-view-container h3{
+    font-size: 30px;
+    margin-top: 5px;
   }
 }
 

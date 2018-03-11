@@ -1,2 +1,452 @@
+/* dropdown menu */
+nav {
+	width:100%;
+	background:#648c99;
+	height:60px; 
+	line-height:60px;
+	border-bottom:1px solid #dddddd;
+}
 
+.hamburger {
+  background:none;
+  position:absolute;
+  top:4;
+  right:0;
+  line-height:42px;
+  padding:5px 30px 0px 15px;
+  color:white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
+}
 
+.cross {
+  background:none;
+  position:absolute;
+  top:4;
+  right:0;
+  line-height:42px;
+  padding:5px 30px 0px 15px;
+  color:white;
+  border:0;
+  font-size:2em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10;
+}
+
+.menu {
+  z-index:10; 
+  font-weight:bold; 
+  font-size:0.8em; 
+  width:100%; 
+  background:#f1f1f1;  
+  position:absolute; 
+  text-align:center; 
+  font-size:12px;
+}
+
+.menu ul {
+  margin: 0; 
+  padding: 0; 
+}
+
+.menu li {
+  display: block;
+  padding:15px 0 15px 0;
+  border-bottom:#dddddd 1px solid;
+}
+
+span a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.menu ul li a {
+  text-decoration:none;
+  margin: 0px;
+  color:#666;
+}
+
+.menu a {
+  text-decoration:none; 
+  color:#666;}
+
+nav {
+  display:inline-block;
+  font-size:12px;
+}
+
+span {
+  padding-left:20px;
+}
+
+a {
+  color:#336699;
+}
+
+.clear {
+  clear:both;
+}
+
+.create-user-form-view p {
+  color: white;
+  font-size: 18px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+}
+
+input {
+  border-radius: 5px;
+  border-style: none;
+  width: 90%;
+  padding: 20px;
+  height: 25px;
+  margin: 16px 5%;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+}
+
+.button {
+  height: 40px;
+  border-radius: 4px;
+  background-color: #648c99;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 90%;
+  margin: 16px 5% 20px;
+} 
+
+.submit2 {
+  height:35px;
+  border-radius: 4px;
+  background-color: #648c99;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 90%;
+  margin: 16px 5% 20px;
+} 
+
+.img-wrapper {
+  float: left;
+}
+
+.restaurant-overlay {
+ width:82%;
+ margin:0 auto;
+}
+
+.yelp-view-container{
+padding-top:20px;
+
+}
+
+.yelpImg{
+width:90%;
+margin:0 auto;
+display: block;
+}
+
+.yelpImg img{
+max-width:100%;
+display: block;
+margin:0 auto;
+}
+
+.aboutImg{
+width:90%;
+margin:0 auto;
+display: block;
+}
+
+.aboutImg img{
+max-width:100%;
+display: block;
+margin:0 auto;
+}
+
+.yelpInfo{
+padding:20px 20px 0 20px;
+margin:0 auto;
+}
+
+.yelpInfo h3{
+margin-top:0px;
+padding-top:0px;
+padding-bottom:0px;
+margin-bottom:0px;
+}
+
+.yelpInfo p{
+margin-top:0px;
+padding-top:8px;
+padding-bottom:0px;
+margin-bottom:5px;
+}
+
+.yelpInfo div{
+float:left;
+}
+
+.yelpInfo div{
+width:40%;
+}
+
+.yelp-logo{
+width: 20%;
+  vertical-align: bottom;
+}
+
+.review-view-container{
+margin: 0 auto;
+width: 90%;
+}
+
+.review-view-container > p {
+margin-top: 1%;
+margin-bottom: 1%;
+font-size: 10px;
+}
+
+.review-submit-form h3{
+border-radius: 5px;
+border-style: none;
+width: 90%;
+padding: 20px;
+height: 25px;
+margin: 16px 5%;
+color: #333;
+}
+
+.td-index {
+width: 10%;
+text-align: center;
+}
+
+#table-review-header{
+text-align: center;
+width: 300px;
+padding: 8px;
+}
+
+.review-content{
+border-radius: 5px;
+border-style: none;
+width: 300px;
+padding: 20px;
+height: 25px;
+margin: 16px 5%;
+background-color: white;
+}
+
+.review-item-btn-container{
+margin-left: 9%;
+margin-top: 1%;
+margin-bottom: 1%;
+font-size: 10px;
+margin-bottom: 2%;
+}
+
+.review-item-btn-container p{
+margin-top: 3px;
+margin-bottom: 3px; 
+margin-right: 10%;
+width: 150px;
+display: inline-block;
+}
+
+.post-review-container > h3{
+margin-top: 5%;
+margin-left: 5%;
+margin-bottom: 3%;
+}
+
+#review-create-form > input{
+margin-top: 3px;
+margin-bottom: 0;
+}
+
+textarea{
+border-radius: 5px;
+border-style: none;
+width: 90%;
+padding: 3%;
+height: 30%;
+margin: 16px 5%;
+background-color: white;
+}
+
+.review-item-btn-container h3{
+font-size: 14px;
+}
+
+.imgRating{
+height:20px;
+}
+
+#yelp-detail{
+padding-top:20px;
+}
+
+.healthdetail{
+font-size:14px;
+}
+
+.businessName{
+margin:0;
+padding-top:20px;
+padding-bottom:0px;
+}
+
+.detail-view-container p{
+padding:0px 0px 5px 0px;
+margin:0px;
+font-size:14px;
+}
+
+.detail-view-container h3{
+padding:10px 0px 5px 0px;
+margin:0px;
+}
+
+.homeH3{
+padding-top:15px;
+text-align: center;
+}
+
+#about-detail{
+font-size: 1em;
+line-height: 1.5em;
+padding: 0 1em;
+}
+
+@media (min-width: 600px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 50%;
+    float: left;
+  }
+
+  .yelpImg{
+    width: 12em;
+    height: 12em;
+    margin:0 auto;
+    display: block;
+  }
+
+  .yelpImg img{
+    display: block;
+    margin: 0 auto;
+    width: 12em;
+    height: 12em;
+    object-fit: cover;
+  }
+
+  .detailImg img{
+    display: block;
+    margin: 0 auto;
+    width: 30em;
+  }
+
+  #about-detail{
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0 1em;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .aboutContainer {
+    padding: 0px 5%;
+    vertical-align: top;
+    margin: 0 auto;
+    width: 45%;
+    display: inline-block;
+    text-align: left;
+  }
+ 
+  .aboutImg img{
+    width: 100%;
+  }
+  
+  .about-view {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding-top:25px;
+  }
+
+  #yelp-detail-img {
+    width: 20em;
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  .yelp-detail-view-container {
+    text-align: center;
+  }
+  .yelp-detail-view-container h3{
+    font-size: 30px;
+    margin-top: 5px;
+  }
+
+  #table-review-header{
+    text-align: center;
+    padding: 8px;
+  }
+
+  .review-item-btn-container p{
+    margin-top: 3px;
+    margin-bottom: 3px; 
+    margin-right: 73%;
+    width: 150px;
+    display: inline-block;
+  }
+
+  .review-content{
+    border-radius: 5px;
+    border-style: none;
+    padding: 20px;
+    height: 25px;
+    margin: 16px 5%;
+    background-color: white;
+  }
+
+  .review-list-table{
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  main{
+      width:75%;
+  }
+
+  .yelp-view-container {
+    padding-top: 20px;
+    width: 33%;
+    float: left;
+  }
+
+  #yelp-list{
+    padding: 0px 20px;
+  }
+}

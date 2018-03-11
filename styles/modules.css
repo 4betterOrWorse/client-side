@@ -1,3 +1,33 @@
+.menu li:hover {
+  display: block;
+  background:#ffffff;
+  padding:15px 0 15px 0;
+  border-bottom:#dddddd 1px solid;
+}
+
+.menu ul li a:hover {
+  color: #666;
+  text-decoration:none;
+}
+
+.menu a:hover {
+  text-decoration:none;
+  color:#666;
+}
+
+button a:link{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+button a:active{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+button a:visited{
+  color:#ffffff !important;
+  text-decoration: none;
+}
+
 #how2 {
   text-align: center;
   color: white;

@@ -26,12 +26,10 @@ var app = app || {};
       }
     });
 
-    //show only the first header
     $('.table-header').hide();
     $('#1').show();
 
     if(localStorage.getItem('username')) {
-      console.log('update');
       $('#username').val(localStorage.username);
     }
 
@@ -44,7 +42,6 @@ var app = app || {};
       localStorage.username = review.username;
       module.Review.create(review);
     })
-
   }
 
   reviewView.initUpdateReview = (ctx) => {
@@ -55,7 +52,6 @@ var app = app || {};
     $('#single-review-update').append(template(ctx));
 
     if(localStorage.getItem('username')) {
-      console.log('update');
       $('#update-username').val(localStorage.username);
     }
 
@@ -66,22 +62,19 @@ var app = app || {};
         username: $('#update-username').val(),
         review: $('#update-review').val() || ctx.review,
       };
-
       module.Review.update(review);
-
     });
+
     $('#cancel-btn').on('click', function(event){
       event.preventDefault();
       app.Review.cancel();
     });
-
   };
 
   reviewView.initSingleReview = (ctx) => {
     reset();
     $('.single-review').show();
     $('#single-reivew-list').empty();
-
     $('#single-review-list').append(ctx.toHtml());
   }
 
@@ -93,7 +86,6 @@ var app = app || {};
     $('#delete-review-list').append(template(ctx));
 
     if(localStorage.getItem('username')) {
-      console.log('delete');
       $('#delete-username').val(localStorage.username);
     }
 
@@ -105,15 +97,12 @@ var app = app || {};
         review: $('#delete-review').val() || ctx.review,
       };
       app.Review.delete(review);
-
     });
+
     $('#delete-cancel-btn').on('click', function(event){
       event.preventDefault();
       app.Review.cancel();
     });
-
   };
-
   module.reviewView = reviewView;
-
 })(app);

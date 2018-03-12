@@ -2,7 +2,6 @@
 
 var app = app || {};
 
-// this is a temporary location for the hamburger menu, will move later.
 $(document).ready(function() {
   $('.cross').hide();
   $('.menu').hide();
@@ -19,7 +18,6 @@ $(document).ready(function() {
     });
   });
 });
-// temporary location for hamburger menu
 
 (function (module){
 
@@ -66,7 +64,7 @@ $(document).ready(function() {
 
     chartKC.sort(function(a, b){
       var dateA=new Date(a.inspection_date), dateB=new Date(b.inspection_date)
-      return dateA-dateB //sort by date ascending
+      return dateA-dateB
     });
 
     let restDates = [];
@@ -80,26 +78,19 @@ $(document).ready(function() {
 
     let ctxMap = document.getElementById('myChart');
     let chart = new Chart(ctxMap, {
-      // The type of chart we want to create
       type: 'bar',
-      // The data for our dataset
       data: {
-        // labels: ["January", "February", "March", "April", "May", "June", "July"],
         labels:restDates,
         datasets: [{
           label: 'Total violation points',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
-          // data: [0, 10, 5, 2, 20, 30, 45],
           data:restScore,
         }]
       },
-
-      // Configuration options go here
       options: {}
     });
   };
 
   module.restaurantsView = restaurantsView;
-
 })(app);
